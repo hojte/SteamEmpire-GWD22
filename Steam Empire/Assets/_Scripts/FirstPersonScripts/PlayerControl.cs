@@ -52,7 +52,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if (customInput.controllerLocked) return;
+        if (customInput.controllerLocked || DialogueManager.GetInstance().dialogueIsPlaying) return;
 
         //Jumping and vertical speed
         if (customInput.isJumping && controller.isGrounded)

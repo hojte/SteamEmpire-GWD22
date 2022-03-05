@@ -1,52 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+namespace _Scripts.Dialogue
 {
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
-
-    [Header("Ink JSON")]
-    [SerializeField] private TextAsset inkJSON;
-
-    private bool playerInRange;
-
-    private void Awake() 
+    public class DialogueTrigger : MonoBehaviour
     {
-        playerInRange = false;
-        visualCue.SetActive(false);
-    }
+        [Header("Visual Cue")]
+        [SerializeField] private GameObject visualCue;
 
-    private void Update() 
-    {
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying) 
+        [Header("Ink JSON")]
+        [SerializeField] private TextAsset inkJson;
+
+        private bool _playerInRange;
+
+        private void Awake() 
         {
-            visualCue.SetActive(true);
-            if (InputManager.GetInstance().GetInteractPressed()) 
-            {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-            }
-        }
-        else 
-        {
+            _playerInRange = false;
             visualCue.SetActive(false);
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collider) 
-    {
-        if (collider.gameObject.tag == "Player")
+        private void Update() 
         {
-            playerInRange = true;
+            if (_playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying) 
+            {
+                visualCue.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E)) 
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJson);
+                }
+            }
+            else 
+            {
+                visualCue.SetActive(false);
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D collider) 
-    {
-        if (collider.gameObject.tag == "Player")
+        private void OnTriggerEnter(Collider col) 
         {
-            playerInRange = false;
+            if (col.gameObject.CompareTag("Player"))
+            {
+                _playerInRange = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider col) 
+        {
+            if (col.gameObject.CompareTag("Player"))
+            {
+                _playerInRange = false;
+            }
         }
     }
 }
