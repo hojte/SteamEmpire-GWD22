@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &41998033 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4310465631391381109, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
-  m_PrefabInstance: {fileID: 3909671310017267033}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &70340329
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +795,7 @@ MonoBehaviour:
   m_PointAction: {fileID: 0}
   m_MoveAction: {fileID: 7023726599725230892, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
   m_SubmitAction: {fileID: 9154684136299698876, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
-  m_CancelAction: {fileID: 0}
+  m_CancelAction: {fileID: 463146809983382119, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
   m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
@@ -1482,8 +1477,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1464817613}
   continueIcon: {fileID: 1112352483}
   dialogueText: {fileID: 354148273}
-  displayNameText: {fileID: 0}
-  portraitAnimator: {fileID: 0}
+  displayNameText: {fileID: 1155986283}
+  portraitAnimator: {fileID: 260261511}
   choices:
   - {fileID: 302127384}
   - {fileID: 1400979431}
@@ -1621,25 +1616,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400979431}
   m_CullTransparentMesh: 1
---- !u!1 &1462772481 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5209818209343404501, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
-  m_PrefabInstance: {fileID: 3909671310017267033}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1462772484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462772481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c493542e2e702ef498e35550b527f7a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visualCue: {fileID: 41998033}
-  inkJson: {fileID: 4900000, guid: fea2c01fa63e8bb4d9b9e983db087c4e, type: 3}
 --- !u!1 &1464817613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 4845957487687728666, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+      propertyPath: inkJson
+      value: 
+      objectReference: {fileID: 4900000, guid: 8f16c12ff3439d248b073eaf223bbad3, type: 3}
     - target: {fileID: 4870001087304648097, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2491,6 +2471,10 @@ PrefabInstance:
     - target: {fileID: 4759955149360973903, guid: 504f0bed16621064bb0169db432181ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759955150604942486, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504f0bed16621064bb0169db432181ef, type: 3}

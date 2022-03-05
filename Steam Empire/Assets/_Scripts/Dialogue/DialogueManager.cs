@@ -82,10 +82,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // handle continuing to the next line in the dialogue when submit is pressed
+        // handle continuing to the next line in the dialogue when key is pressed
         if (canContinueToNextLine 
             && currentStory.currentChoices.Count == 0 
-            && InputManager.GetInstance().GetSubmitPressed())
+            && Input.GetKeyDown(KeyCode.Space))
         {
             ContinueStory();
         }
@@ -101,8 +101,8 @@ public class DialogueManager : MonoBehaviour
 
         // reset portrait, layout, and speaker
         displayNameText.text = "???";
-        portraitAnimator.Play("default");
-        layoutAnimator.Play("right");
+        // portraitAnimator.Play("default");
+        // layoutAnimator.Play("right");
 
         ContinueStory();
     }
@@ -137,8 +137,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator DisplayLine(string line) 
+    private IEnumerator DisplayLine(string line)
     {
+        bool fasterTyping = false;
         // set the text to the full line, but set the visible characters to 0
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
@@ -154,11 +155,12 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in line.ToCharArray())
         {
             // if the submit button is pressed, finish up displaying the line right away
-            if (InputManager.GetInstance().GetSubmitPressed()) 
-            {
-                dialogueText.maxVisibleCharacters = line.Length;
-                break;
-            }
+            // if (InputManager.GetInstance().GetSubmitPressed()) 
+            // {
+            //     dialogueText.maxVisibleCharacters = line.Length;
+            //     break;
+            // }
+            fasterTyping = Input.GetKey(KeyCode.Space);
 
             // check for rich text tag, if found, add it without waiting
             if (letter == '<' || isAddingRichTextTag) 
@@ -173,7 +175,7 @@ public class DialogueManager : MonoBehaviour
             else 
             {
                 dialogueText.maxVisibleCharacters++;
-                yield return new WaitForSeconds(typingSpeed);
+                yield return new WaitForSeconds(fasterTyping ? 0.01f : typingSpeed);
             }
         }
 
@@ -267,7 +269,7 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNextLine) 
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
-            InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
+            InputManager.GetInstance().RegisterSubmitPressed(); 
             ContinueStory();
         }
     }
