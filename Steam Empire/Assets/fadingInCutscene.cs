@@ -19,4 +19,9 @@ public class fadingInCutscene : MonoBehaviour
     {
         StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(false));
     }
+
+    public void cutscenePlaySound()
+    {
+        uiCanvas.GetComponent<UIController>().cutscenePlayAudio();
+    }
 }

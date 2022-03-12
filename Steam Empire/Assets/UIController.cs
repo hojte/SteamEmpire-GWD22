@@ -5,7 +5,12 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public GameObject blackOutSquare;
+    public AudioSource cutsceneAudio;
 
+    private void Start()
+    {
+        cutsceneAudio = GetComponent<AudioSource>();
+    }
     public void Update() {
         if (Input.GetKeyDown(KeyCode.A))
             StartCoroutine(FadeBlackOutSquare());
@@ -20,7 +25,14 @@ public class UIController : MonoBehaviour
 
     public void cutsceneFadeAwayFromBlack()
     {
+        cutsceneAudio = GetComponent<AudioSource>();
         StartCoroutine(FadeBlackOutSquare(false));
+    }
+
+    public void cutscenePlayAudio()
+    {
+        // Currently being played on scene load instead
+        //cutsceneAudio.Play();
     }
 
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, int fadeSpeed = 2)
