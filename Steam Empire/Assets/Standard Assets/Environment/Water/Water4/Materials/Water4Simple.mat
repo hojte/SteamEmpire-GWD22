@@ -60,11 +60,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _FresnelScale: 0.3897143
+    - _FresnelScale: 0.47
     - _GerstnerIntensity: 1
     - _HeightDisplacement: 2.3370318
     - _NormalsDisplacement: 72.72728
-    - _Shininess: 349.13794
+    - _Shininess: 200
     m_Colors:
     - _AnimationDirection: {r: 2, g: 1, b: -1, a: 1}
     - _AnimationTiling: {r: 0.4, g: 0.39099997, b: 0.56, a: 0.7}
@@ -73,10 +73,10 @@ Material:
     - _BumpTiling: {r: 0.04, g: 0.04, b: 0.04, a: 0.08}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DepthColor: {r: 0.29811764, g: 0.36611718, b: 0.39552242, a: 0.34509805}
-    - _DistortParams: {r: 1.0285715, g: 0.20187221, b: 2.87, a: -2.43}
+    - _DistortParams: {r: 1.0285715, g: 0.17, b: 2.87, a: -2.43}
     - _Foam: {r: 0.3275862, g: 0.7471264, b: 0, a: 0}
     - _GAmplitude: {r: 0, g: 0.4, b: 0, a: 0}
-    - _GDirectionAB: {r: 0.85, g: 0.3, b: 0.25, a: 0.25}
+    - _GDirectionAB: {r: 0.3, g: 0.3, b: 0, a: 0.25}
     - _GDirectionCD: {r: -0.3, g: -0.9, b: 0.5, a: 0.5}
     - _GFrequency: {r: 0.5, g: 0.25, b: 0.6, a: 0.245}
     - _GSpeed: {r: 4, g: 2, b: 1, a: 1}
@@ -85,7 +85,7 @@ Material:
     - _ReflectionColor: {r: 0.05873977, g: 0.2264151, b: 0.11463153, a: 1}
     - _RefractionFog: {r: 0.8681778, g: 0.8797176, b: 0.8880597, a: 1}
     - _SpecularColor: {r: 0.82089555, g: 0.80581594, b: 0.7718869, a: 1}
-    - _WorldLightDir: {r: -0.9847187, g: -0.17359081, b: -0.013992548, a: 0}
+    - _WorldLightDir: {r: 0.013992369, g: -0.17359081, b: -0.9847186, a: 0}
   m_BuildTextureStacks: []
 --- !u!1002 &2100001
 EditorExtensionImpl:
