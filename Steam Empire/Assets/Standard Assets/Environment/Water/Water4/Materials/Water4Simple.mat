@@ -82,7 +82,7 @@ Material:
     - _GSpeed: {r: 4, g: 2, b: 1, a: 1}
     - _GSteepness: {r: 3.0301306, g: 1, b: 1, a: 1}
     - _InvFadeParemeter: {r: 1.54, g: 0.08562102, b: 0.09414239, a: 0.68}
-    - _ReflectionColor: {r: 0.05873977, g: 0.2264151, b: 0.11463153, a: 1}
+    - _ReflectionColor: {r: 0.6918832, g: 0.8679245, b: 0.720199, a: 1}
     - _RefractionFog: {r: 0.8681778, g: 0.8797176, b: 0.8880597, a: 1}
     - _SpecularColor: {r: 0.82089555, g: 0.80581594, b: 0.7718869, a: 1}
     - _WorldLightDir: {r: 0.013992369, g: -0.17359081, b: -0.9847186, a: 0}
