@@ -10,6 +10,14 @@ public class fadingInCutscene : MonoBehaviour
         uiCanvas = FindObjectOfType<Canvas>().gameObject;
     }
 
+    void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Return))
+            gameObject.SetActive(false);
+        
+    }
+
     public void cutsceneFadeToBlack()
     {
         StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare());
@@ -23,5 +31,10 @@ public class fadingInCutscene : MonoBehaviour
     public void cutscenePlaySound()
     {
         uiCanvas.GetComponent<UIController>().cutscenePlayAudio();
+    }
+
+    public void cutsceneEnd()
+    {
+        gameObject.SetActive(false);
     }
 }

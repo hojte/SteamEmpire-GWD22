@@ -12,10 +12,6 @@ public class UIController : MonoBehaviour
         cutsceneAudio = GetComponent<AudioSource>();
     }
     public void Update() {
-        if (Input.GetKeyDown(KeyCode.A))
-            StartCoroutine(FadeBlackOutSquare());
-        if (Input.GetKeyDown(KeyCode.S))
-            StartCoroutine(FadeBlackOutSquare(false));
     }
 
     public void cutsceneFadeToBlack()
@@ -63,4 +59,16 @@ public class UIController : MonoBehaviour
             }
         }
     }
+
+    public void setDiseasePercent(float newPercent)
+    {
+        gameObject.GetComponentInChildren<DiseaseBarManager>().setDiseasePercentage(newPercent);
+    }
+
+    public float getDiseasePercent()
+    {
+        return gameObject.GetComponentInChildren<DiseaseBarManager>().getDiseasePercentage();
+    }
+
+    
 }
