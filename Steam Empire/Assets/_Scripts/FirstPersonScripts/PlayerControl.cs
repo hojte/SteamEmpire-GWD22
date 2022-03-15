@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -35,6 +36,7 @@ public class PlayerControl : MonoBehaviour
 
     CharacterController controller;
     Camera camera;
+    CinemachineVirtualCamera cineMachine;
 
     void Awake()
     {
@@ -48,11 +50,15 @@ public class PlayerControl : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         camera = Camera.main;
+        cineMachine = FindObjectOfType<CinemachineVirtualCamera>();
     }
 
     void Update()
     {
-        if (customInput.controllerLocked || DialogueManager.GetInstance().dialogueIsPlaying) return;
+        if (customInput.controllerLocked || DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
 
         //Jumping and vertical speed
         if (customInput.isJumping && controller.isGrounded)

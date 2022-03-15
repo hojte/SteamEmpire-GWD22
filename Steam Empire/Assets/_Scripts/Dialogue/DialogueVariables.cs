@@ -41,6 +41,20 @@ public class DialogueVariables
             PlayerPrefs.SetString(saveVariablesKey, globalVariablesStory.state.ToJson());
         }
     }
+    public void ClearVariables(TextAsset loadGlobalsJSON) 
+    {
+        Debug.Log("Clearing Story...");
+        PlayerPrefs.DeleteKey(saveVariablesKey);
+        globalVariablesStory = new Story(loadGlobalsJSON.text);
+        // reset the dictionary
+        variables = new Dictionary<string, Ink.Runtime.Object>();
+        foreach (string name in globalVariablesStory.variablesState)
+        {
+            Ink.Runtime.Object value = globalVariablesStory.variablesState.GetVariableWithName(name);
+            variables.Add(name, value);
+            Debug.Log("ReInitialized global dialogue variable: " + name + " = " + value);
+        }
+    }
 
     public void StartListening(Story story) 
     {

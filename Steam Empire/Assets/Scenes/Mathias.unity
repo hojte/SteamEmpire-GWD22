@@ -321,6 +321,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179306065}
   m_CullTransparentMesh: 1
+--- !u!1 &250907747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1925602634723771083, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+  m_PrefabInstance: {fileID: 3909671310017267033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &250907752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250907747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726b21bb21c7976439aa5e0df71b886c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactMessage: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1186373592}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: EnterDialogueMode
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: fea2c01fa63e8bb4d9b9e983db087c4e, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &260261509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,7 +2448,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8973491255549723942, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973491255549723942, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1186373592}
+    - target: {fileID: 8973491255549723942, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterDialogueMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973491255549723942, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973491255549723942, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4900000, guid: 8f16c12ff3439d248b073eaf223bbad3, type: 3}
+    - target: {fileID: 8973491255549723942, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.TextAsset, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8973491255549723942, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a04842a2737305e4cb7dbf52e3d5b6e9, type: 3}
 --- !u!1001 &4759955150268861715
 PrefabInstance:

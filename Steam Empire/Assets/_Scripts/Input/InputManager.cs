@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +13,7 @@ public class InputManager : MonoBehaviour
     private bool jumpPressed = false;
     private bool interactPressed = false;
     private bool submitPressed = false;
+    private Input _input;
 
     private static InputManager instance;
 
@@ -25,6 +24,7 @@ public class InputManager : MonoBehaviour
             Debug.LogError("Found more than one Input Manager in the scene.");
         }
         instance = this;
+        _input = new Input();
     }
 
     public static InputManager GetInstance() 
@@ -42,6 +42,11 @@ public class InputManager : MonoBehaviour
         {
             moveDirection = context.ReadValue<Vector2>();
         } 
+    }
+
+    public void SelectPressed(InputAction.CallbackContext context)
+    {
+        Debug.Log("ffefok"+context.ReadValue<Vector2>());
     }
 
     public void JumpPressed(InputAction.CallbackContext context)

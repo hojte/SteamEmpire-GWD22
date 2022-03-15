@@ -14,12 +14,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextAsset loadGlobalsJSON;
 
     [Header("Dialogue UI")]
+    [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
-    [SerializeField] private Animator portraitAnimator;
-    private Animator layoutAnimator;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -35,8 +34,6 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager instance;
 
     private const string SPEAKER_TAG = "speaker";
-    private const string PORTRAIT_TAG = "portrait";
-    private const string LAYOUT_TAG = "layout";
 
     private DialogueVariables dialogueVariables;
 
@@ -61,9 +58,6 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
-        // get the layout animator
-        layoutAnimator = dialoguePanel.GetComponent<Animator>();
-
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -76,12 +70,13 @@ public class DialogueManager : MonoBehaviour
 
     private void Update() 
     {
+        // clear storyline
+        if (Input.GetKeyDown(KeyCode.F4)) dialogueVariables.ClearVariables(loadGlobalsJSON);
         // return right away if dialogue isn't playing
         if (!dialogueIsPlaying) 
         {
             return;
         }
-
         // handle continuing to the next line in the dialogue when key is pressed
         if (canContinueToNextLine 
             && currentStory.currentChoices.Count == 0 
@@ -99,10 +94,8 @@ public class DialogueManager : MonoBehaviour
 
         dialogueVariables.StartListening(currentStory);
 
-        // reset portrait, layout, and speaker
-        displayNameText.text = "???";
-        // portraitAnimator.Play("default");
-        // layoutAnimator.Play("right");
+        // reset portrait speaker
+        displayNameText.text = "unknown";
 
         ContinueStory();
     }
@@ -194,7 +187,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void HandleTags(List<string> currentTags)
+    private void HandleTags(List<string> currentTags) // handle tags made with #(tag) in ink story
     {
         // loop through each tag and handle it accordingly
         foreach (string tag in currentTags) 
@@ -213,12 +206,6 @@ public class DialogueManager : MonoBehaviour
             {
                 case SPEAKER_TAG:
                     displayNameText.text = tagValue;
-                    break;
-                case PORTRAIT_TAG:
-                    portraitAnimator.Play(tagValue);
-                    break;
-                case LAYOUT_TAG:
-                    layoutAnimator.Play(tagValue);
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
