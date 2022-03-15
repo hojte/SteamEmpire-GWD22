@@ -14,7 +14,9 @@ public class fadingInCutscene : MonoBehaviour
     {
 
         if (Input.GetKeyDown(KeyCode.Return))
+        {
             gameObject.SetActive(false);
+        }
         
     }
 
