@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.Audio;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
@@ -14,7 +15,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextAsset loadGlobalsJSON;
 
     [Header("Dialogue UI")]
-    [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -34,8 +34,10 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager instance;
 
     private const string SPEAKER_TAG = "speaker";
+    private const string AUDIO_TAG = "audio";
 
     private DialogueVariables dialogueVariables;
+    private bool dialogueSoundIsPlaying;
 
     private void Awake() 
     {
@@ -172,6 +174,8 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        while (dialogueSoundIsPlaying) yield return new WaitForSeconds(0.05f); // wait for sound dialogue to finish
+        
         // actions to take after the entire line has finished displaying
         continueIcon.SetActive(true);
         DisplayChoices();
@@ -207,6 +211,11 @@ public class DialogueManager : MonoBehaviour
                 case SPEAKER_TAG:
                     displayNameText.text = tagValue;
                     break;
+                case AUDIO_TAG:
+                    AudioClip audioClip = Resources.Load<AudioClip>(tagValue);
+                    AudioUtility.CreateSFX(audioClip, transform, 0);
+                    StartCoroutine(WaitForClip(audioClip));
+                    break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;
@@ -222,7 +231,7 @@ public class DialogueManager : MonoBehaviour
         if (currentChoices.Count > choices.Length)
         {
             Debug.LogError("More choices were given than the UI can support. Number of choices given: " 
-                + currentChoices.Count);
+                           + currentChoices.Count);
         }
 
         int index = 0;
@@ -260,7 +269,7 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
         }
     }
-
+    
     public Ink.Runtime.Object GetVariableState(string variableName) 
     {
         Ink.Runtime.Object variableValue = null;
@@ -278,5 +287,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueVariables.SaveVariables();
     }
-
+    private IEnumerator WaitForClip(AudioClip clip)
+    {
+        dialogueSoundIsPlaying = true;
+        yield return new WaitForSeconds(clip.length);
+        dialogueSoundIsPlaying = false;
+    }
 }
