@@ -179,7 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typingSpeed: 0.04
   loadGlobalsJSON: {fileID: 4900000, guid: 887664fee91ae02418ad84c36b9b5e18, type: 3}
-  dialogueCanvas: {fileID: 7425595377839834527}
   dialoguePanel: {fileID: 7425595377356675762}
   continueIcon: {fileID: 7425595377138723740}
   dialogueText: {fileID: 7425595378469442254}
@@ -2207,7 +2206,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -360.0138, w: -39.46917}
+  m_margin: {x: 0, y: 0, z: -508.96436, w: -39.46917}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
