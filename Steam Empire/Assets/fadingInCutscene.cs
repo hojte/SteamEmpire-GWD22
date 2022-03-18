@@ -32,7 +32,7 @@ public class fadingInCutscene : MonoBehaviour
 
     public void cutscenePlaySound()
     {
-        uiCanvas.GetComponent<UIController>().cutscenePlayAudio();
+        //uiCanvas.GetComponent<UIController>().cutscenePlayAudio();
     }
 
     public void cutsceneEnd()
