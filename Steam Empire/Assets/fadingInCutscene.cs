@@ -7,7 +7,6 @@ public class fadingInCutscene : MonoBehaviour
     public GameObject uiCanvas;
     void Start()
     {
-        uiCanvas = FindObjectOfType<Canvas>().gameObject;
     }
 
     void Update()
