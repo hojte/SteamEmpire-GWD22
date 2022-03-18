@@ -212,9 +212,7 @@ public class DialogueManager : MonoBehaviour
                     displayNameText.text = tagValue;
                     break;
                 case AUDIO_TAG:
-                    AudioClip audioClip = Resources.Load<AudioClip>(tagValue);
-                    AudioUtility.CreateSFX(audioClip, transform, 0);
-                    StartCoroutine(WaitForClip(audioClip));
+                    StartCoroutine(PlayAndWaitForClip(tagValue));
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
@@ -287,10 +285,12 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueVariables.SaveVariables();
     }
-    private IEnumerator WaitForClip(AudioClip clip)
+    private IEnumerator PlayAndWaitForClip(string path)
     {
+        AudioClip audioClip = Resources.Load<AudioClip>(path);
+        AudioUtility.CreateSFX(audioClip, transform, 0);
         dialogueSoundIsPlaying = true;
-        yield return new WaitForSeconds(clip.length);
+        yield return new WaitForSeconds(audioClip.length);
         dialogueSoundIsPlaying = false;
     }
 }
