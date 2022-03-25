@@ -1,6 +1,7 @@
 -> AMBUSH
 
 TODO: Ideas: - Something about toll?
+TODO: Dumb it down
 
 === AMBUSH ===
 {not WHO: Hey, hold up. What you got there?}
@@ -36,9 +37,10 @@ Do you think we're stupid? I know you're not from the district. And they don't l
 
 
 === GET_LOST ===
-There's three of us and you don't exactly look like a fighter. <>
+{CANT_HELP: I don't see any protection. <>}
+There's three of us, you're alone and not exactly the fighting type. <>
 TODO: INSULT HERE
-We'll just take a closer look ourselves then.
+TODO: More?
 
 * [I'm sorry. I'm not looking for trouble] -> APOLOGIZE
 * [Wait! What do you think happens when the FOREMAN hears that you stopped me?] -> ARGUE
@@ -48,13 +50,15 @@ We'll just take a closer look ourselves then.
 You want us to pay? For something we can just take for free? The balls on this one.
 TODO: AMIRITE GUYS.
 Here's a deal for you. You hand over the SHIPMENT and maybe... We don't kill you.
+
 * [Wait! What do you think happens when the FOREMAN finds out that you're stealing his SHIPMENT?] -> ARGUE
 
 
 === CANT_HELP ===
+TODO: SO... THIS IS JUST FULLY MISSING
+This isn't a negotiation. I'm telling you to do something and if you don't then we'll force you.
 
-TODO: REPLACE UPPER CITY FOLKS
-* {not GET_LOST} [Just get out of my way.] -> GET_LOST
+* {not GET_LOST} [Just get out of my way. I'm protected.] -> GET_LOST
 * [I have an agreement with the FOREMAN.] -> ARGUE
 
 
