@@ -8,6 +8,8 @@ public class TriggerDialogue : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextAsset dialogueAsset;
     
+    [SerializeField] private GameObject [] obstacles;
+    
     //TODO: Maybe set position and cam rotation for player character to face main hoodlum properly
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +23,18 @@ public class TriggerDialogue : MonoBehaviour
     {
         var player = other.GetComponent<PlayerControl>();
         if (player != null)
-            Destroy(gameObject);
+        {
+            EndScene();
+        }
+    }
+
+    public void EndScene()
+    {
+        for (int i = 0; i < obstacles.Length; i++)
+        {
+            obstacles[i].SetActive(false);
+        }
+        Destroy(gameObject);
     }
     
 }
