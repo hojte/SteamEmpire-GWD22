@@ -7,6 +7,8 @@ public class TriggerDialogue : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextAsset dialogueAsset;
+    
+    //TODO: Maybe set position and cam rotation for player character to face main hoodlum properly
     private void OnTriggerEnter(Collider other)
     {
         var player = other.GetComponent<PlayerControl>();

@@ -7598,6 +7598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 759079611}
   - component: {fileID: 759079612}
+  - component: {fileID: 759079613}
   m_Layer: 0
   m_Name: Ambush
   m_TagString: Untagged
@@ -7632,6 +7633,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &759079613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759079610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07e19fbc8bfcf34e9898a0d2b0208af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 1919286332}
+  dialogueAsset: {fileID: 4900000, guid: 1963c0fe99b2e9347bbe9632bc273d5d, type: 3}
 --- !u!1001 &766338015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15785,53 +15800,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5947785372538210900, guid: a85e09d6b541edd47b4ce7286eda7bec, type: 3}
   m_PrefabInstance: {fileID: 1486104389}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1495893344 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4350255507955477491, guid: 67b335454c2333a46a8253e7606ab4a2, type: 3}
-  m_PrefabInstance: {fileID: 1289182372}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1495893348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495893344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 726b21bb21c7976439aa5e0df71b886c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactMessage: 
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919286332}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: EnterDialogueMode
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 1963c0fe99b2e9347bbe9632bc273d5d, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!136 &1495893349
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495893344}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -1}
 --- !u!1 &1503249673
 GameObject:
   m_ObjectHideFlags: 0
