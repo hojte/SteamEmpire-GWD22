@@ -7,7 +7,7 @@ TODO: Ideas: - Something about toll?
 {WHO: Now. Tell me what you have there before I lose my patience.}
 * [Who are you?] -> WHO
 * [It's nothing.] -> NOTHING
-* [A food delivery for BOSS.] -> FOOD
+* [A food delivery for the FOREMAN.] -> FOOD
 * [Get out of my way.] -> GET_LOST
 
 
