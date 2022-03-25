@@ -6,7 +6,7 @@ TODO: Dumb it down
 === AMBUSH ===
 {not WHO: Hey, hold up. What you got there?}
 {WHO: Now. Tell me what you have there before I lose my patience.}
-* [Who are you?] -> WHO
+//* [Who are you?] -> WHO
 * [It's nothing.] -> NOTHING
 * [A food delivery for the FOREMAN.] -> FOOD
 * [Get out of my way.] -> GET_LOST
@@ -20,7 +20,7 @@ TODO: Add who they are or deflect question
 === NOTHING ===
 Do you think we're stupid? I know you're not from the district. And they don't let anybody in unless there's a good reason. 
 
-* {not WHO} [Who are you, anyway?] -> WHO
+//* {not WHO} [Who are you, anyway?] -> WHO
 * [A food delivery for the FOREMAN.] -> FOOD
 * [Get out of my way.] -> GET_LOST
 
