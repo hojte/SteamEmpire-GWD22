@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class JournalAppear : MonoBehaviour
 {
-    [SerializeField]
+   // [SerializeField]
     private Canvas _journalCanvas;
 
 
@@ -43,10 +43,8 @@ public class JournalAppear : MonoBehaviour
                 String[] lines = line.Split(':');
                 journalCanvas.transform.Find(lines[0]).GetComponent<Text>().enabled = bool.Parse(lines[1]);
                 journalCanvas.transform.Find(lines[0]+" line").GetComponent<Text>().enabled = bool.Parse(lines[2]);
-                Debug.Log(line);
-                
             }
-            //reader.Close();
+            reader.Close();
         }
 
     }
