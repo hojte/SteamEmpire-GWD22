@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 4759955150604942491}
   - component: {fileID: 4759955150604942484}
   - component: {fileID: 6725804155898809406}
-  - component: {fileID: 6103296200127993484}
+  - component: {fileID: 6609983963110085871}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   camera: {fileID: 4759955149069476834}
   interactDistance: 2
   interactTxt: {fileID: 2205349866388718755}
---- !u!114 &6103296200127993484
+--- !u!114 &6609983963110085871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
