@@ -3,38 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerDialogue : MonoBehaviour
+public class AmbushEvent : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextAsset dialogueAsset;
     
     [SerializeField] private GameObject [] obstacles;
+
+    [SerializeField] private Collider collider;
     
+
     //TODO: Maybe set position and cam rotation for player character to face main hoodlum properly
     private void OnTriggerEnter(Collider other)
     {
         var player = other.GetComponent<PlayerControl>();
         if (player != null)
-            dialogueManager.EnterDialogueMode(dialogueAsset);
-    }
-
-    //TODO: Push this to wherever fade to black and end of dialogue etc will be called 
-    private void OnTriggerExit(Collider other)
-    {
-        var player = other.GetComponent<PlayerControl>();
-        if (player != null)
         {
-            EndScene();
+            dialogueManager.AssignStory(dialogueAsset);
+            dialogueManager.GetCurrentStory.BindExternalFunction("knockout", () => EndScene());
+            dialogueManager.InitDialogue();
+            collider.enabled = false;
         }
     }
 
-    public void EndScene()
+    //TODO: Push this to wherever fade to black and end of dialogue etc will be called 
+ 
+
+    private void EndScene()
     {
+        //Need to find a better way to do this, also issue with story when object disabled
+        StartCoroutine(WaitThenKnockout());
+    }
+
+    private IEnumerator WaitThenKnockout()
+    {
+        yield return new WaitForSeconds(3f);
         for (int i = 0; i < obstacles.Length; i++)
         {
             obstacles[i].SetActive(false);
         }
-        Destroy(gameObject);
     }
     
 }

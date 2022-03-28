@@ -36,6 +36,8 @@ public class DialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
 
     private DialogueVariables dialogueVariables;
+    
+    public Story GetCurrentStory => currentStory;
 
     private void Awake() 
     {
@@ -88,7 +90,17 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON) 
     {
+        AssignStory(inkJSON);
+        InitDialogue();
+    }
+
+    public void AssignStory(TextAsset inkJSON)
+    {
         currentStory = new Story(inkJSON.text);
+    }
+
+    public void InitDialogue()
+    {
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -278,5 +290,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueVariables.SaveVariables();
     }
+
+
 
 }

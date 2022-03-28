@@ -1,3 +1,4 @@
+EXTERNAL knockout()
 -> AMBUSH
 
 TODO: Ideas: - Something about toll?
@@ -71,11 +72,12 @@ Maybe choose your words carefully next time. Now hand over the SHIPMENT and mayb
 {DEAL: Are you for real? A minute ago you wanted to sell me his food and now you want me to worry about him? Besides... <>}
 {(GET_LOST or APOLOGIZE): So that's who you're working for? Should've guessed. Doesn't matter now. <>}
 {CANT_HELP: So you're another of those UPPER CITY FOLKS profiting of the disease... You think mentioning the FOREMAN scares us? <>}
-He doesn't care about some OUTSIDER. And it's not like he's not gonna find out that it was us. -> KNOCKOUT
+He doesn't care about some OUTSIDER. And it's not like he's gonna find out that it was us. 
+-> KNOCKOUT
 
 
 === KNOCKOUT ===
-GET HIM/WHISTLES THEN LOSS OF CONSCIOUSNESS
+~ knockout()
 -> END
 
 
