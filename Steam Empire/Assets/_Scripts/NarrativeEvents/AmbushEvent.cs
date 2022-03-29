@@ -7,6 +7,8 @@ public class AmbushEvent : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextAsset dialogueAsset;
+
+    [SerializeField] private UIController uiController;
     
     [SerializeField] private GameObject [] obstacles;
 
@@ -33,15 +35,20 @@ public class AmbushEvent : MonoBehaviour
     {
         //Need to find a better way to do this, also issue with story when object disabled
         StartCoroutine(WaitThenKnockout());
+        StartCoroutine(uiController.FadeBlackOutSquare());
     }
 
     private IEnumerator WaitThenKnockout()
     {
+        //Replace coroutine with something event-driven, maybe reactive? Needs to play as soon as dialogue is over
+        //and players might skip
         yield return new WaitForSeconds(3f);
         for (int i = 0; i < obstacles.Length; i++)
         {
             obstacles[i].SetActive(false);
         }
+
+        StartCoroutine(uiController.FadeBlackOutSquare(fadeToBlack:false));
     }
     
 }
