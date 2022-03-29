@@ -22,27 +22,27 @@ public class AmbushEvent : MonoBehaviour
         if (player != null)
         {
             dialogueManager.AssignStory(dialogueAsset);
-            dialogueManager.GetCurrentStory.BindExternalFunction("knockout", () => EndScene());
+            dialogueManager.dialogueExit.AddListener(EndScene);
+            //dialogueManager.GetCurrentStory.BindExternalFunction("knockout", () => EndScene());
             dialogueManager.InitDialogue();
             collider.enabled = false;
         }
     }
 
-    //TODO: Push this to wherever fade to black and end of dialogue etc will be called 
- 
+    //TODO: Add input lock
 
     private void EndScene()
     {
         //Need to find a better way to do this, also issue with story when object disabled
-        StartCoroutine(WaitThenKnockout());
+        StartCoroutine(Knockout());
         StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare());
     }
 
-    private IEnumerator WaitThenKnockout()
+    private IEnumerator Knockout()
     {
         //Replace coroutine with something event-driven, maybe reactive? Needs to play as soon as dialogue is over
         //and players might skip
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         for (int i = 0; i < obstacles.Length; i++)
         {
             obstacles[i].SetActive(false);
