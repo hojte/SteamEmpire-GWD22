@@ -8,7 +8,7 @@ public class AmbushEvent : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextAsset dialogueAsset;
 
-    [SerializeField] private UIController uiController;
+    [SerializeField] private Canvas uiCanvas;
     
     [SerializeField] private GameObject [] obstacles;
 
@@ -35,7 +35,7 @@ public class AmbushEvent : MonoBehaviour
     {
         //Need to find a better way to do this, also issue with story when object disabled
         StartCoroutine(WaitThenKnockout());
-        StartCoroutine(uiController.FadeBlackOutSquare());
+        StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare());
     }
 
     private IEnumerator WaitThenKnockout()
@@ -48,7 +48,7 @@ public class AmbushEvent : MonoBehaviour
             obstacles[i].SetActive(false);
         }
 
-        StartCoroutine(uiController.FadeBlackOutSquare(fadeToBlack:false));
+        StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(fadeToBlack:false));
     }
     
 }
