@@ -23488,6 +23488,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -80
       objectReference: {fileID: 0}
+    - target: {fileID: 7425595376612056813, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595376612056813, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7425595377356675759, guid: 504f0bed16621064bb0169db432181ef, type: 3}
       propertyPath: m_Color.b
       value: 0.061925933
@@ -23499,6 +23507,42 @@ PrefabInstance:
     - target: {fileID: 7425595377356675759, guid: 504f0bed16621064bb0169db432181ef, type: 3}
       propertyPath: m_Color.r
       value: 0.066037714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377356675761, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 7425595377437307542, guid: 504f0bed16621064bb0169db432181ef, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
@@ -23668,6 +23712,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.000091552734
       objectReference: {fileID: 0}
+    - target: {fileID: 7425595377832204249, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377839834525, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595377839834525, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 7425595378469442254, guid: 504f0bed16621064bb0169db432181ef, type: 3}
       propertyPath: m_fontSize
       value: 72
@@ -23691,6 +23747,10 @@ PrefabInstance:
     - target: {fileID: 7425595378469442254, guid: 504f0bed16621064bb0169db432181ef, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4290374394
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425595378469442255, guid: 504f0bed16621064bb0169db432181ef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7425595378485810277, guid: 504f0bed16621064bb0169db432181ef, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
