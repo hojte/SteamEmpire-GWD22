@@ -1,4 +1,4 @@
-EXTERNAL knockout()
+//EXTERNAL knockout()
 -> AMBUSH
 
 TODO: Ideas: - Something about toll?
@@ -77,7 +77,7 @@ He doesn't care about some OUTSIDER. And it's not like he's gonna find out that 
 
 
 === KNOCKOUT ===
-~ knockout()
+//~ knockout()
 -> END
 
 

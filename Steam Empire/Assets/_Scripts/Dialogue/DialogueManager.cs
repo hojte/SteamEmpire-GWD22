@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
@@ -36,8 +37,12 @@ public class DialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
 
     private DialogueVariables dialogueVariables;
+
+    private UnityEvent _dialogueExit;
     
     public Story GetCurrentStory => currentStory;
+
+    public UnityEvent dialogueExit => _dialogueExit;
 
     private void Awake() 
     {
@@ -48,6 +53,7 @@ public class DialogueManager : MonoBehaviour
         instance = this;
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        _dialogueExit = new UnityEvent();
     }
 
     public static DialogueManager GetInstance() 
@@ -114,6 +120,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode() 
     {
+        _dialogueExit.Invoke();
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
@@ -121,6 +128,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        _dialogueExit.RemoveAllListeners();
     }
 
     private void ContinueStory() 
@@ -283,6 +291,7 @@ public class DialogueManager : MonoBehaviour
         }
         return variableValue;
     }
+    
 
     // This method will get called anytime the application exits.
     // Depending on your game, you may want to save variable state in other places.
