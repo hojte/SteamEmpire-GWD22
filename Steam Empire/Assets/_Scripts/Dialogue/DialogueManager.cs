@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private GameObject continueIcon;
+    //[SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
 
@@ -149,7 +149,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
         // hide items while text is typing
-        continueIcon.SetActive(false);
+       // continueIcon.SetActive(false);
         HideChoices();
 
         canContinueToNextLine = false;
@@ -185,7 +185,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // actions to take after the entire line has finished displaying
-        continueIcon.SetActive(true);
+        //continueIcon.SetActive(true);
         DisplayChoices();
 
         canContinueToNextLine = true;
