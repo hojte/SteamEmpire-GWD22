@@ -1,0 +1,5 @@
+1 clue:true:true
+2 clue:true:false
+3 clue:false:false
+4 clue:false:false
+5 clue:false:false
