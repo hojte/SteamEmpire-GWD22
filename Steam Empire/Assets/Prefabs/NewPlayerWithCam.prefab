@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 289513468124605344}
   m_Layer: 0
   m_Name: NewPlayerWithCam
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 1971613690692120529}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2191,7 +2191,6 @@ MonoBehaviour:
   loadGlobalsJSON: {fileID: 4900000, guid: 887664fee91ae02418ad84c36b9b5e18, type: 3}
   dialogueCanvas: {fileID: 2379955235156977264}
   dialoguePanel: {fileID: 2379955234673883485}
-  continueIcon: {fileID: 2379955235026307187}
   dialogueText: {fileID: 2379955235784618273}
   displayNameText: {fileID: 2379955235003620859}
   choices:
