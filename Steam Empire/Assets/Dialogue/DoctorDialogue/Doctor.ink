@@ -24,21 +24,26 @@ Didn't I tell you to leave? What do you want now?
     * [The foreman sent me. I have supplies.] -> FOREMAN_TASK 
 
 === FOREMAN_TASK ===
-Thank you. It's not as much as we need, but at least my patients will have something to eat tonight. -> PASS_OUT
+{QUESTIONS_1: Why didn't you say that?}
+Just put them down anywhere. Tell the FOREMAN that it's appreciated. But if he really wants this to get better we'll need more/to combat this/fix the distrcit/help the district. MAYBE list WHAT IS NEEDED Way more. -> PASS_OUT
 
 === PASS_OUT ===
+You don't look so good. Are you okay? WOAH WOAH WOAH
 -> INFECTION_REVEAL
 
 === INFECTION_REVEAL ===
+AH, YOU'RE FINALLY AWAKE
+
     -> HUB_2
 
 
 === HUB_2 ===
+{not LEAVE: STILL TALKING ABOUT DISEASE}
 Did you need anything else?
 
-* [Questions] -> QUESTIONS_2
-* [Treatment] -> TREATMENT
-* [Help]-> OFFER_HELP
+* [I have some questions.] -> QUESTIONS_2
+* [Anything you can do to treat me?] -> TREATMENT
+* [Is there anything else I can do for you?]-> OFFER_HELP
 * [I'll be going.] -> LEAVE
 
 
@@ -71,7 +76,10 @@ Not much is known yet besides the fact that it is highly contagious and that it 
 
     
 === TREATMENT ===
+I haven't found a cure, yet. All I can do is slow the spread.
 TODO: Based on current infection/disease value change respond to can slow spread vs did all that I can for now, come back later
+There isn't anything I can do for you at the moment. Come back later.
+Lie down and I'll see what I can do.
     -> END
 
 
