@@ -201,11 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bffb575d8cdcf42ba34ef7f5c34fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &948207207 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 1726381768338701909, guid: 3d1b6467ab45d63459b5bc8cfd79820e, type: 3}
-  m_PrefabInstance: {fileID: 4569661240952956503}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1252787772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -264,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 6431096328056974393, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
       propertyPath: collider
       value: 
-      objectReference: {fileID: 948207207}
+      objectReference: {fileID: 1252787773}
     - target: {fileID: 6431096328056974393, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
       propertyPath: uiCanvas
       value: 
@@ -299,6 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 1413411970}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+--- !u!65 &1252787773 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6431096328056974392, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+  m_PrefabInstance: {fileID: 1252787772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1274952133 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 231237078719079158, guid: 3d1b6467ab45d63459b5bc8cfd79820e, type: 3}
