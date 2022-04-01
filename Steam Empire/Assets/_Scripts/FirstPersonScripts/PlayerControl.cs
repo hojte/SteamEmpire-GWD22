@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerControl : MonoBehaviour
@@ -34,12 +33,21 @@ public class PlayerControl : MonoBehaviour
     float targetBobHeight = 0;
     float startBobHeight;
 
+    [Header("Sound FX")] 
+    public AudioClip[] footstepClips;
+    private float baseStepSpeed = 0.5f;
+    private float sprintStepMultiplier = 0.7f;
+    private float footstepTimer;
+    private AudioSource playerAudioSource;
+    private float GetStepIntervalSpeed => customInput.isSprinting ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
+    
     CharacterController controller;
     Camera camera;
     CinemachineVirtualCamera cineMachine;
 
     void Awake()
     {
+        playerAudioSource = gameObject.AddComponent<AudioSource>();
         if (hideCursor)
         {
             Cursor.visible = false;
@@ -74,6 +82,7 @@ public class PlayerControl : MonoBehaviour
 
         Move();
         HeadBobbing();
+        FootSteps();
     }
 
     void Move()
@@ -99,9 +108,7 @@ public class PlayerControl : MonoBehaviour
             //Sets the speed and target height of the bobbing
             currentBobSpeed = customInput.isSprinting ? sprintBobSpeed : walkBobSpeed;
             targetBobHeight = customInput.isSprinting ? sprintBobHeight : walkBobHeight;
-
             float _currentHeight = Mathf.Sin(Time.time * currentBobSpeed) * targetBobHeight * 0.1f;
-
             //Sets the targets location to correctly
             bobFollowTarget.localPosition = new Vector3(0, startBobHeight + _currentHeight, 0);
         }
@@ -110,5 +117,15 @@ public class PlayerControl : MonoBehaviour
             //Resets the target to the bobbing start position
             bobFollowTarget.localPosition = Vector3.MoveTowards(bobFollowTarget.localPosition, new Vector3(0, startBobHeight, 0), Time.deltaTime * bobResetSpeed);
         }
+    }
+
+    private void FootSteps()
+    {
+        if(!controller.isGrounded) return;
+        if(customInput.moveDirection == Vector3.zero) return;
+        footstepTimer -= Time.deltaTime;
+        if (!(footstepTimer <= 0)) return;
+        playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length-1)]);
+        footstepTimer = GetStepIntervalSpeed;
     }
 }
