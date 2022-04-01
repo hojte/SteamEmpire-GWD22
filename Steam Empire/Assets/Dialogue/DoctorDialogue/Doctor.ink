@@ -9,19 +9,19 @@ Who are you? What do you want?
 
 === FIRST_APPROACH ===
 
-Well met, I indeed am in charge of this place, and, as you can imagine I am quite busy these days, so...
+Yes, that is me. Did you need something? I'm really busy...
     * [I have some questions.] -> QUESTIONS_1
-    * [The factory foreman asked me to bring you supplies. Here you go, please take them.] -> FOREMAN_TASK
+    * [The foreman sent me. I have supplies.] -> FOREMAN_TASK
     
     
 === QUESTIONS_1 ===
-Why would I tell you that? I am busy. Don't talk to me unless you have somethin important to say. -> END
+I do not have time for this. Unless there is something important/ you're here to help, I'll need you to leave. -> END
 
     
 === SECOND_APPROACH ===
-{FOREMAN_TASK: You're back again? -> HUB_2}
-What do you want now?
-    * [The factory foreman asked me to bring you supplies. Here you go, please take them.] -> FOREMAN_TASK 
+{FOREMAN_TASK: You're back again? What can I do for you? -> HUB_2}
+Didn't I tell you to leave? What do you want now?
+    * [The foreman sent me. I have supplies.] -> FOREMAN_TASK 
 
 === FOREMAN_TASK ===
 Thank you. It's not as much as we need, but at least my patients will have something to eat tonight. -> PASS_OUT
