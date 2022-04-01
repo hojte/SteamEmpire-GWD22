@@ -1309,6 +1309,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4350255507955477260, guid: 67b335454c2333a46a8253e7606ab4a2, type: 3}
+      propertyPath: offset
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350255507955477260, guid: 67b335454c2333a46a8253e7606ab4a2, type: 3}
       propertyPath: animations
       value: 5
       objectReference: {fileID: 0}
@@ -2615,6 +2619,14 @@ PrefabInstance:
     - target: {fileID: 4862297999877121419, guid: 4078d3573ff284e439d15e12441f7d26, type: 3}
       propertyPath: m_Name
       value: pre_npc_woman_animOnly
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862297999877121420, guid: 4078d3573ff284e439d15e12441f7d26, type: 3}
+      propertyPath: offset
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862297999877121421, guid: 4078d3573ff284e439d15e12441f7d26, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4862297999877121422, guid: 4078d3573ff284e439d15e12441f7d26, type: 3}
       propertyPath: m_RootOrder
