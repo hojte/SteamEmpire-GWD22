@@ -32,8 +32,10 @@ You don't look so good. Are you okay? WOAH WOAH WOAH
 -> INFECTION_REVEAL
 
 === INFECTION_REVEAL ===
-AH, YOU'RE FINALLY AWAKE
-
+AH, YOU'RE FINALLY AWAKE. I examined you, while you were passed out. 
+You're infected. I'm sorry. From the progression I'd assume you caught the disease X hours ago. I did what I could to treat it, but unfortunately I cannot cure it. Only slow the spread.
+    *[That's impossible.]
+TODO: make connection that hoodlums infected PC?
     -> HUB_2
 
 
@@ -62,6 +64,7 @@ What do you want to know?
 
 
 === DOCTOR_INFO ===
+TODO: Not from around here, used to have my workshop here; bunch of things you cannot do/aren't allowed to do in the other districts; MAYBE WORKSHOP CAN BE FOUND AND LOOKS LIKE CENTER OF DISEASE
     -> QUESTIONS_2
 
 === FOOD_INFO ===
@@ -71,13 +74,15 @@ My position as the district's main doctor has been fairly respected since the be
 -> QUESTIONS_2
 
 === DISEASE_INFO ===
-Not much is known yet besides the fact that it is highly contagious and that it spreads on living things. Actually, some people mention seeing it spread on wood as well, so not even that might be correct
+TODO: Should be sort of dodgy on this part, knows exactly where the disease came from, but does not want to talk about it, maybe sense of pride for figuring out some of it, but also see previous point. Only one who can figure this out, because has all the information
+Let's see... It's highly contagious. Spreads on anything ORGANIC.  WOOD, PLANTS, ANIMALS... HUMANS. Haven't seen it on stone. That's probably why it hasn't spread to the UPPER/OTHER districts. THEY BARELY LET PEOPLE LEAVE BEFORE, LET ALONE NOW. And... Sorry to say, but I haven't found a cure. It's a death sentence. At least for now.
+
     -> QUESTIONS_2
 
     
 === TREATMENT ===
 I haven't found a cure, yet. All I can do is slow the spread.
-TODO: Based on current infection/disease value change respond to can slow spread vs did all that I can for now, come back later
+TODO: Based on current infection/disease value change respond to can slow spread vs did all that I can do for now, come back later
 There isn't anything I can do for you at the moment. Come back later.
 Lie down and I'll see what I can do.
     -> END
