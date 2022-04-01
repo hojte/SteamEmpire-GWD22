@@ -771,6 +771,8 @@ MonoBehaviour:
   sprintBobHeight: 0.2
   sprintBobSpeed: 18
   bobResetSpeed: 10
+  footstepClips:
+  - {fileID: 8300000, guid: fae98d4fbcec9584582c789676bb3232, type: 3}
 --- !u!114 &6725804155898809406
 MonoBehaviour:
   m_ObjectHideFlags: 0
