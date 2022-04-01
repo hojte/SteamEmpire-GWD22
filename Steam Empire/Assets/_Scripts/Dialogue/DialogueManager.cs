@@ -4,6 +4,7 @@ using _Scripts.Audio;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
@@ -16,7 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private GameObject continueIcon;
+    //[SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
 
@@ -39,6 +40,12 @@ public class DialogueManager : MonoBehaviour
     private DialogueVariables dialogueVariables;
     private bool dialogueSoundIsPlaying;
 
+    private UnityEvent _dialogueExit;
+    
+    public Story GetCurrentStory => currentStory;
+
+    public UnityEvent dialogueExit => _dialogueExit;
+
     private void Awake() 
     {
         if (instance != null)
@@ -48,6 +55,7 @@ public class DialogueManager : MonoBehaviour
         instance = this;
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        _dialogueExit = new UnityEvent();
     }
 
     public static DialogueManager GetInstance() 
@@ -90,7 +98,17 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON) 
     {
+        AssignStory(inkJSON);
+        InitDialogue();
+    }
+
+    public void AssignStory(TextAsset inkJSON)
+    {
         currentStory = new Story(inkJSON.text);
+    }
+
+    public void InitDialogue()
+    {
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -104,6 +122,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode() 
     {
+        _dialogueExit.Invoke();
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
@@ -111,6 +130,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        _dialogueExit.RemoveAllListeners();
     }
 
     private void ContinueStory() 
@@ -139,7 +159,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
         // hide items while text is typing
-        continueIcon.SetActive(false);
+       // continueIcon.SetActive(false);
         HideChoices();
 
         canContinueToNextLine = false;
@@ -177,7 +197,7 @@ public class DialogueManager : MonoBehaviour
         while (dialogueSoundIsPlaying) yield return new WaitForSeconds(0.05f); // wait for sound dialogue to finish
         
         // actions to take after the entire line has finished displaying
-        continueIcon.SetActive(true);
+        //continueIcon.SetActive(true);
         DisplayChoices();
 
         canContinueToNextLine = true;
@@ -278,6 +298,7 @@ public class DialogueManager : MonoBehaviour
         }
         return variableValue;
     }
+    
 
     // This method will get called anytime the application exits.
     // Depending on your game, you may want to save variable state in other places.
