@@ -496,6 +496,8 @@ MonoBehaviour:
   sprintBobHeight: 0.2
   sprintBobSpeed: 18
   bobResetSpeed: 10
+  footstepClips:
+  - {fileID: 8300000, guid: fae98d4fbcec9584582c789676bb3232, type: 3}
 --- !u!114 &1971613690692120529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2203,7 +2205,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typingSpeed: 0.04
   loadGlobalsJSON: {fileID: 4900000, guid: 887664fee91ae02418ad84c36b9b5e18, type: 3}
-  dialogueCanvas: {fileID: 2379955235156977264}
   dialoguePanel: {fileID: 2379955234673883485}
   dialogueText: {fileID: 2379955235784618273}
   displayNameText: {fileID: 2379955235003620859}
