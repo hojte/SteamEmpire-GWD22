@@ -1,3 +1,5 @@
+TODO: Add foreman dialogue condition
+
 {INTRODUCTION: -> SECOND_APPROACH}
 {not INTRODUCTION: -> INTRODUCTION}
 
@@ -24,24 +26,27 @@ Didn't I tell you to leave? What do you want now?
     * [The foreman sent me. I have supplies.] -> FOREMAN_TASK 
 
 === FOREMAN_TASK ===
-{QUESTIONS_1: Why didn't you say that?}
-Just put them down anywhere. Tell the FOREMAN that it's appreciated. But if he really wants this to get better we'll need more/to combat this/fix the distrcit/help the district. MAYBE list WHAT IS NEEDED Way more. -> PASS_OUT
+TODO: What is the status of medical science here? What is needed to combat the disease?
+{QUESTIONS_1: Why didn't you start with that? <>}
+Just put them down anywhere. Tell the FOREMAN that it's appreciated. But if he really wants this to get better we'll need more/to combat this/fix the district/help the district. MAYBE list WHAT IS NEEDED Way more. We need... -> PASS_OUT
 
 === PASS_OUT ===
-You don't look so good. Are you okay? WOAH WOAH WOAH
--> INFECTION_REVEAL
+Are you feeling okay?
+TODO: Pass out here
+-> INFECTION_REVEAL_I
 
-=== INFECTION_REVEAL ===
-AH, YOU'RE FINALLY AWAKE. I examined you, while you were passed out. 
-You're infected. I'm sorry. From the progression I'd assume you caught the disease X hours ago. I did what I could to treat it, but unfortunately I cannot cure it. Only slow the spread.
-    *[That's impossible.]
+=== INFECTION_REVEAL_I ===
+Oh, YOU'RE BACK WITH US/AWAKE. TAKE IT EASY. I examined you, while you were passed out... 
+You're infected. I'm sorry. 
+    *[What? How... That's impossible.] -> INFECTION_REVEAL_II
 TODO: make connection that hoodlums infected PC?
-    -> HUB_2
-
+    
+=== INFECTION_REVEAL_II ===
+From the progression I'd assume you caught the disease X hours ago. I did what I could to treat it, but... All I can do is slow the spread.
+* [...] -> HUB_2
 
 === HUB_2 ===
-{not LEAVE: STILL TALKING ABOUT DISEASE}
-Did you need anything else?
+Can I do anything else for you?
 
 * [I have some questions.] -> QUESTIONS_2
 * [Anything you can do to treat me?] -> TREATMENT
