@@ -30,7 +30,7 @@ public class JournalAppear : MonoBehaviour
             
     }
     
-    [MenuItem("Tools/Read file")]
+    //[MenuItem("Tools/Read file")]
     static void ReadString(Canvas journalCanvas)
     {
         string path = "Assets/Prefabs/Journal/journal.txt";
