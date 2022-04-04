@@ -1,9 +1,12 @@
+INCLUDE globals.ink
+
 TODO: Add foreman dialogue condition
 TODO: rephrase of "district/districts"
 TODO: Add that PC is not from around here somewhere
+TODO: Use global variable to track where to go
 
-{INTRODUCTION: -> SECOND_APPROACH}
-{not INTRODUCTION: -> INTRODUCTION}
+{doctor_approached: -> SECOND_APPROACH}
+-> INTRODUCTION
 
 === INTRODUCTION ===
 Who are you? What do you want?
@@ -12,14 +15,15 @@ Who are you? What do you want?
 
 
 === FIRST_APPROACH ===
-
+~ doctor_approached = true
 Yes, that is me. Did you need something? I'm really busy...
     * [I have some questions.] -> QUESTIONS_1
     * [The foreman sent me. I have supplies.] -> FOREMAN_TASK
     
-    
+
+TODO: Line of people that want to be treated?    
 === QUESTIONS_1 ===
-I do not have time for this. Unless there is something important/ you're here to help, I'll need you to leave. -> END
+I do not have time for this. If you need to be treated get in line. Otherwise, I'll need you to leave. -> END
 
     
 === SECOND_APPROACH ===
@@ -30,7 +34,7 @@ Didn't I tell you to leave? What do you want now?
 === FOREMAN_TASK ===
 TODO: What is the status of medical science here? What is needed to combat the disease?
 {QUESTIONS_1: Why didn't you start with that? <>}
-Just put them down anywhere. Tell the FOREMAN that it's appreciated. But if he really wants this to get better we'll need more/to combat this/fix the district/help the district. MAYBE list WHAT IS NEEDED Way more. We need... -> PASS_OUT
+Just put them down anywhere. Tell the foreman that it's appreciated. But if he really is serious about fighting this disease I'll need some manpower and even more supplies. We need bandages, strong alcohol... -> PASS_OUT
 
 === PASS_OUT ===
 Are you feeling okay?
@@ -38,7 +42,8 @@ TODO: Pass out here
 -> INFECTION_REVEAL_I
 
 === INFECTION_REVEAL_I ===
-Oh, YOU'RE BACK WITH US/AWAKE. TAKE IT EASY. I examined you, while you were passed out... 
+TODO: Fade from black after/at easy now?
+You're awake. Easy now. I examined you, while you were passed out... 
 You're infected. I'm sorry. 
     *[What? How... That's impossible.] -> INFECTION_REVEAL_II
 TODO: make connection that hoodlums infected PC? Clear enough?
@@ -92,16 +97,16 @@ We've been on our own, since the emperor locked down the district. The magistrat
 
 === DISEASE_INFO ===
 TODO: Should be sort of dodgy on this part, knows exactly where the disease came from, but does not want to talk about it, maybe sense of pride for figuring out some of it, but also see previous point. Only one who can figure this out, because has all the information
-Let's see... It's highly contagious, but fairly slow. Infects anything organic.  Wood, plants, animals... Humans. Haven't seen it on stone. That's probably why it hasn't spread to the UPPER/OTHER districts. The people here were BARELY allowed to leave before, let alone now. And... Sorry to say, but I haven't found a cure. It's a death sentence. At least for now.
+Let's see... It's highly contagious, but fairly slow. Infects anything organic.  Wood, plants, animals... Humans. Haven't seen it on stone. That's probably why it hasn't spread to the upper districts. The people here were barely allowed to leave before, let alone now. And... Sorry to say, but I haven't found a cure. It's a death sentence. At least for now.
 
     -> QUESTIONS_2
 
     
 === TREATMENT ===
-I haven't found a cure, yet. All I can do is slow the spread.
+I still don't have a cure, yet. All I can do is slow the spread.
 TODO: Based on current infection/disease value change respond to can slow spread vs did all that I can do for now, come back later
-There isn't anything I can do for you at the moment. Come back later.
-Lie down and I'll see what I can do.
+{disease < 50: There isn't anything I can do for you at the moment. Come back later.}
+{disease >= 50: Lie down and I'll see what I can do.}
     -> END
 
 
