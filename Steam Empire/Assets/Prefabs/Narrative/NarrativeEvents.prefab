@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
   dialogueAsset: {fileID: 4900000, guid: 1963c0fe99b2e9347bbe9632bc273d5d, type: 3}
+  uiCanvas: {fileID: 0}
   obstacles:
   - {fileID: 0}
   - {fileID: 0}
@@ -97,3 +98,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  collider: {fileID: 6431096328056974392}

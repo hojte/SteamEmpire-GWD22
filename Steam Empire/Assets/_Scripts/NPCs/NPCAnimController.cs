@@ -10,10 +10,18 @@ public class NPCAnimController : MonoBehaviour
 
     Animator anim;
 
+    void Start()
+    {
+
+        anim.Play(0, -1, Random.value);
+    }
+
+
     void Awake()
     {
         anim = GetComponent<Animator>();
         anim.SetFloat("AnimIndex", (int)animations);
         transform.rotation = Quaternion.Euler(90, transform.rotation.eulerAngles.y, 0);
+        
     }
 }
