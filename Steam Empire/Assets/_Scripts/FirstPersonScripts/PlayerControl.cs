@@ -59,6 +59,7 @@ public class PlayerControl : MonoBehaviour
         controller = GetComponent<CharacterController>();
         camera = Camera.main;
         cineMachine = FindObjectOfType<CinemachineVirtualCamera>();
+        disablePlayerControls();
     }
 
     void Update()
@@ -127,5 +128,24 @@ public class PlayerControl : MonoBehaviour
         if (!(footstepTimer <= 0)) return;
         playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length-1)]);
         footstepTimer = GetStepIntervalSpeed;
+    }
+
+    public void teleportPlayer(GameObject teleportTarget)
+    {
+        controller.gameObject.transform.position = teleportTarget.transform.position;
+        controller.gameObject.transform.rotation = teleportTarget.transform.rotation;
+    }
+
+    public void disablePlayerControls()
+    {
+        controller.enabled = false;
+        cineMachine.enabled = false;
+
+    }
+
+    public void enablePlayerControls()
+    {
+        controller.enabled = true;
+        cineMachine.enabled = true;
     }
 }
