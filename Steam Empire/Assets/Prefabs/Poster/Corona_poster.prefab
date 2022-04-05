@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6070786694917186352}
   - component: {fileID: 6070786694917186355}
   - component: {fileID: 3083339078845567854}
+  - component: {fileID: 2911783218647715999}
   m_Layer: 0
   m_Name: Corona_poster
   m_TagString: Poster
@@ -108,5 +109,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.000001, y: 15.01666, z: 24.993202}
-  m_Center: {x: 0.000016177437, y: 7.2149024, z: 7.496571}
+  m_Size: {x: 10.000001, y: 22.973639, z: 24.993202}
+  m_Center: {x: 0.000022331245, y: 11.193378, z: 7.496571}
+--- !u!114 &2911783218647715999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070786694917186354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d96030d004a9045a3bd91c595858cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Image: {fileID: 2264143454634146986, guid: 818dc4539391cb442a971c8a08ef89fc, type: 3}
