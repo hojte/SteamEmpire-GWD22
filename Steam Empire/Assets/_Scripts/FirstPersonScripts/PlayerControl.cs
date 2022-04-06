@@ -132,8 +132,36 @@ public class PlayerControl : MonoBehaviour
 
     public void teleportPlayer(GameObject teleportTarget)
     {
+        //disablePlayerControls();
         controller.gameObject.transform.position = teleportTarget.transform.position;
-        controller.gameObject.transform.rotation = teleportTarget.transform.rotation;
+        changeCameraRotation(teleportTarget.transform.localEulerAngles.x, teleportTarget.transform.localEulerAngles.y);
+        print("test" + teleportTarget.transform.localEulerAngles.y + " " + teleportTarget.transform.localEulerAngles.x);
+        //enablePlayerControls();
+    }
+
+    public void changeCameraRotation(float vertical, float horizontal)
+    {
+        cineMachine.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value = WrapAngle(vertical);
+        cineMachine.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.Value = WrapAngle(horizontal);
+    }
+
+    private static float WrapAngle(float angle)
+    {
+        angle %= 360;
+        if (angle > 180)
+            return angle - 360;
+
+        return angle;
+    }
+
+    private static float UnwrapAngle(float angle)
+    {
+        if (angle >= 0)
+            return angle;
+
+        angle = -angle % 360;
+
+        return 360 - angle;
     }
 
     public void disablePlayerControls()
