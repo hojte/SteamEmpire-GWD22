@@ -38,6 +38,8 @@ Just put them down anywhere. Tell the foreman that it's appreciated. But if he r
 
 === PASS_OUT ===
 Are you feeling okay?
+
+\* You pass out *
 TODO: Pass out here
 -> INFECTION_REVEAL_I
 
