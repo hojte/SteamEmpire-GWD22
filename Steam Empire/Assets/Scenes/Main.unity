@@ -267,6 +267,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 490916174}
+    - target: {fileID: 8939901398552839216, guid: 3d1b6467ab45d63459b5bc8cfd79820e, type: 3}
+      propertyPath: mumblingClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939901398552839216, guid: 3d1b6467ab45d63459b5bc8cfd79820e, type: 3}
+      propertyPath: mumblingClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3445a8e8c36153049a492cc5a8d7ffde, type: 3}
+    - target: {fileID: 8939901398552839216, guid: 3d1b6467ab45d63459b5bc8cfd79820e, type: 3}
+      propertyPath: mumblingClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 039ee026550743443a118dd9bc17add4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d1b6467ab45d63459b5bc8cfd79820e, type: 3}
 --- !u!1 &170223485 stripped
@@ -398,7 +410,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78658
+  m_Name: pb_Mesh-1310966
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
