@@ -51,7 +51,7 @@ You're infected. I'm sorry.
 TODO: make connection that hoodlums infected PC? Clear enough?
     
 === INFECTION_REVEAL_II ===
-From the progression I'd assume you caught the disease X hours ago. I did what I could to treat it, but... All I can do is slow the spread.
+From the progression I'd assume you caught the disease within the last 12 hours ago. I did what I could to treat it, but... All I can do is slow the spread.
 * [...] -> HUB_2
 TODO: This transition might need to be smoother
 
