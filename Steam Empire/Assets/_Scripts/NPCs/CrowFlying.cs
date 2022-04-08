@@ -21,6 +21,7 @@ public class CrowFlying : MonoBehaviour
         _audioSource = gameObject.AddComponent<AudioSource>();
         _audioSource.clip = birdFlapClip;
         _audioSource.spatialBlend = 1;
+        _audioSource.volume = 1f;
     }
 
     void Update()

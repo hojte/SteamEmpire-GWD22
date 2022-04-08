@@ -7,6 +7,7 @@ namespace _Scripts.Audio
  
         public List<AudioSource> waterSounds;
         public AudioSource closestWaterSound;
+        public float waterVolume = 1f;
         private GameObject player;
         public float volumeReductionSpeed = .5f;
  
@@ -27,7 +28,9 @@ namespace _Scripts.Audio
             float distance = float.MaxValue;
             closestWaterSound = null;
             //Determine which water sound is the closest
-            foreach(AudioSource waterSound in waterSounds) {
+            foreach(AudioSource waterSound in waterSounds)
+            {
+                waterSound.volume = waterVolume;
                 float newDistance = Vector3.Distance(player.transform.position, waterSound.transform.position);
                 if (newDistance < distance) {
                     distance = newDistance;

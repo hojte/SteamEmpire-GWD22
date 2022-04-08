@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,7 +9,7 @@ public class NPCAnimController : MonoBehaviour
     [SerializeField] Animations animations;
 
     public List<AudioClip> clipsToPlay;
-    public float clipsVolume;
+    public float clipsVolume = 1f;
     public float sfxCooldown = 5f;
     private float sfxCooldownTimer = 0;
     Animator anim;

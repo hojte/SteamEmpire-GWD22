@@ -6,6 +6,7 @@ public class BackgroundSoundManager : MonoBehaviour
 {
     public AudioClip backMusicNormal;
     public AudioClip backMusicDrama;
+    public float musicVolume = 0.09f;
 
     private AudioSource _audioSource;
     
@@ -14,7 +15,7 @@ public class BackgroundSoundManager : MonoBehaviour
     {
         _audioSource = gameObject.AddComponent<AudioSource>();
         _audioSource.loop = true;
-        _audioSource.volume = 0.05f;
+        _audioSource.volume = musicVolume;
         _audioSource.clip = backMusicNormal;
         _audioSource.Play();
     }
