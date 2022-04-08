@@ -391,6 +391,7 @@ MonoBehaviour:
   flyRadius: 50
   rotSpeed: 2
   flySpeed: 7
+  birdFlapClip: {fileID: 8300000, guid: 6d43ae2945355da4c8ec1c0df20d455f, type: 3}
 --- !u!1 &5761295289235975115
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,10 +12,16 @@ public class CrowFlying : MonoBehaviour
     Animator anim;
     Vector3 targetPos;
     bool isFlying = false;
+    public AudioClip birdFlapClip;
+    private AudioSource _audioSource;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.clip = birdFlapClip;
+        _audioSource.spatialBlend = 1;
+        _audioSource.volume = 1f;
     }
 
     void Update()
@@ -37,6 +43,7 @@ public class CrowFlying : MonoBehaviour
             targetPos = transform.position + new Vector3(Random.Range(-flyRadius, flyRadius), flyHeight, Random.Range(-flyRadius, flyRadius));
             isFlying = true;
             anim.SetBool("Flying", true);
+            _audioSource.Play();
         }
     }
 }

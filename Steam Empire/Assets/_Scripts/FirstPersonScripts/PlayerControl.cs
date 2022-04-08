@@ -35,6 +35,8 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Sound FX")] 
     public AudioClip[] footstepClips;
+    public float footstepVolume = 1;
+    
     private float baseStepSpeed = 0.5f;
     private float sprintStepMultiplier = 0.7f;
     private float footstepTimer;
@@ -48,6 +50,7 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         playerAudioSource = gameObject.AddComponent<AudioSource>();
+        playerAudioSource.volume = footstepVolume;
         if (hideCursor)
         {
             Cursor.visible = false;
@@ -59,6 +62,7 @@ public class PlayerControl : MonoBehaviour
         controller = GetComponent<CharacterController>();
         camera = Camera.main;
         cineMachine = FindObjectOfType<CinemachineVirtualCamera>();
+        disablePlayerControls();
     }
 
     void Update()
@@ -125,7 +129,54 @@ public class PlayerControl : MonoBehaviour
         if(customInput.moveDirection == Vector3.zero) return;
         footstepTimer -= Time.deltaTime;
         if (!(footstepTimer <= 0)) return;
-        playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length-1)]);
+        if(footstepClips.Length != 0) playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
         footstepTimer = GetStepIntervalSpeed;
+    }
+
+    public void teleportPlayer(GameObject teleportTarget)
+    {
+        //disablePlayerControls();
+        controller.gameObject.transform.position = teleportTarget.transform.position;
+        changeCameraRotation(teleportTarget.transform.localEulerAngles.x, teleportTarget.transform.localEulerAngles.y);
+        print("test" + teleportTarget.transform.localEulerAngles.y + " " + teleportTarget.transform.localEulerAngles.x);
+        //enablePlayerControls();
+    }
+
+    public void changeCameraRotation(float vertical, float horizontal)
+    {
+        cineMachine.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value = WrapAngle(vertical);
+        cineMachine.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.Value = WrapAngle(horizontal);
+    }
+
+    private static float WrapAngle(float angle)
+    {
+        angle %= 360;
+        if (angle > 180)
+            return angle - 360;
+
+        return angle;
+    }
+
+    private static float UnwrapAngle(float angle)
+    {
+        if (angle >= 0)
+            return angle;
+
+        angle = -angle % 360;
+
+        return 360 - angle;
+    }
+
+    public void disablePlayerControls()
+    {
+        controller.enabled = false;
+        cineMachine.enabled = false;
+
+    }
+
+    public void enablePlayerControls()
+    {
+        controller.enabled = true;
+        cineMachine.enabled = true;
     }
 }

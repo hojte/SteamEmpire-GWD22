@@ -309,7 +309,7 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator PlayAndWaitForClip(string path)
     {
         AudioClip audioClip = Resources.Load<AudioClip>(path);
-        AudioUtility.CreateSFX(audioClip, transform, 0);
+        AudioUtility.CreateSFX(audioClip, transform, 0, 1f);
         dialogueSoundIsPlaying = true;
         yield return new WaitForSeconds(audioClip.length);
         dialogueSoundIsPlaying = false;
