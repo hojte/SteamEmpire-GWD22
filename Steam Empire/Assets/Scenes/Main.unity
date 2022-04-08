@@ -178,10 +178,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewPlayerWithCam
       objectReference: {fileID: 0}
+    - target: {fileID: 2203763106045201763, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3819304440691891764, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
       propertyPath: cutsceneTeleportTarget
       value: 
       objectReference: {fileID: 441225921}
+    - target: {fileID: 4902598320208705131, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
 --- !u!223 &15699524 stripped
@@ -321,6 +329,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1555719664, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 15699525}
+    - target: {fileID: 1555719664, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterDialogueMode
+      objectReference: {fileID: 0}
     - target: {fileID: 6431096326131507776, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
       propertyPath: m_Name
       value: NarrativeEvents
