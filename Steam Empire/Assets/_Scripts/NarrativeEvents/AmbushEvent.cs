@@ -23,7 +23,6 @@ public class AmbushEvent : MonoBehaviour
         {
             dialogueManager.AssignStory(dialogueAsset);
             dialogueManager.dialogueExit.AddListener(EndScene);
-            //dialogueManager.GetCurrentStory.BindExternalFunction("knockout", () => EndScene());
             dialogueManager.InitDialogue();
             collider.enabled = false;
         }
@@ -42,7 +41,7 @@ public class AmbushEvent : MonoBehaviour
     {
         //Replace coroutine with something event-driven, maybe reactive? Needs to play as soon as dialogue is over
         //and players might skip
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         for (int i = 0; i < obstacles.Length; i++)
         {
             obstacles[i].SetActive(false);
