@@ -6,7 +6,7 @@ public class BackgroundSoundManager : MonoBehaviour
 {
     public AudioClip backMusicNormal;
     public AudioClip backMusicDrama;
-    public float musicVolume = 0.09f;
+    public float musicVolume = 0.06f;
 
     private AudioSource _audioSource;
     

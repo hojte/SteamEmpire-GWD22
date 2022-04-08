@@ -9,7 +9,7 @@ public class NPCAnimController : MonoBehaviour
     [SerializeField] Animations animations;
 
     public List<AudioClip> clipsToPlay;
-    public float clipsVolume = 1f;
+    public float clipVolume = 1f;
     public float sfxCooldown = 5f;
     private float sfxCooldownTimer = 0;
     Animator anim;
@@ -21,7 +21,7 @@ public class NPCAnimController : MonoBehaviour
         _audioSource.spatialBlend = 1;
         _audioSource.maxDistance = 6;
         _audioSource.minDistance = 1;
-        _audioSource.volume = clipsVolume;
+        _audioSource.volume = clipVolume;
         anim.Play(0, -1, Random.value);
     }
 
