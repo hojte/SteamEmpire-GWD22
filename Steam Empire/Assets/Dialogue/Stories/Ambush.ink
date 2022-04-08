@@ -4,7 +4,7 @@ TODO: Dumb it down
 TODO: Shipment in cart, cart stuck
 
 === AMBUSH ===
-{not WHO: Wait a minute. I don't think I've seen you around here before. What dare you doing here?}
+{not WHO: Wait a minute. I don't think I've seen you around here before. What are you doing here?}
 {WHO: Now. Tell me what's on the cart before I lose my patience.}
 //* [Who are you?] -> WHO
 * [Just passing by.] -> NOTHING
@@ -60,7 +60,7 @@ This isn't a negotiation. I'm telling you to do something and if you don't then 
 
 === APOLOGIZE ===
 Maybe choose your words carefully next time. Now hand over your shipment and maybe we'll let you live.
-* [Wait! What do you think happens when the foreman finds out that you're stealing his SHIPMENT?] -> ARGUE
+* [Wait! What do you think happens when the foreman finds out that you're stealing from him?] -> ARGUE
 
 
 === ARGUE ===
