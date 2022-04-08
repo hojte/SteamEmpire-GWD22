@@ -2224,6 +2224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4670017377769217574}
+  - component: {fileID: 6921098397594490203}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2247,6 +2248,20 @@ Transform:
   m_Father: {fileID: 289513468124605344}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6921098397594490203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670017377769217573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d24183591c02714da32f970843536c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backMusicNormal: {fileID: 8300000, guid: 805450110fd43d1439381291697d6361, type: 3}
+  backMusicDrama: {fileID: 8300000, guid: 80cbf44d1df0992429000ece536d25fd, type: 3}
 --- !u!1 &4670017377808239256
 GameObject:
   m_ObjectHideFlags: 0
