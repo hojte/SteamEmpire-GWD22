@@ -5,6 +5,7 @@ using UnityEngine;
 public class fadingInCutscene : MonoBehaviour
 {
     public GameObject uiCanvas;
+    public GameObject cutsceneTeleportTarget;
     void Start()
     {
     }
@@ -14,7 +15,7 @@ public class fadingInCutscene : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            gameObject.SetActive(false);
+            cutsceneEnd();
         }
         
     }
@@ -37,5 +38,8 @@ public class fadingInCutscene : MonoBehaviour
     public void cutsceneEnd()
     {
         gameObject.SetActive(false);
+        FindObjectOfType<PlayerControl>().teleportPlayer(cutsceneTeleportTarget);
+        FindObjectOfType<PlayerControl>().enablePlayerControls();
+        
     }
 }
