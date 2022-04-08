@@ -48,6 +48,7 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         playerAudioSource = gameObject.AddComponent<AudioSource>();
+        playerAudioSource.volume = 0.4f;
         if (hideCursor)
         {
             Cursor.visible = false;
@@ -125,7 +126,7 @@ public class PlayerControl : MonoBehaviour
         if(customInput.moveDirection == Vector3.zero) return;
         footstepTimer -= Time.deltaTime;
         if (!(footstepTimer <= 0)) return;
-        if(footstepClips.Length != 0) playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length-1)]);
+        if(footstepClips.Length != 0) playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
         footstepTimer = GetStepIntervalSpeed;
     }
 }
