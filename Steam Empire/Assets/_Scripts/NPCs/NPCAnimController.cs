@@ -10,7 +10,8 @@ public class NPCAnimController : MonoBehaviour
     enum Animations { WashingClothes, Talking, Crying, Begging, Puking, ArmsCrossed, Writing, FixingCart}
     [SerializeField] Animations animations;
 
-    public List<AudioClip> mumblingClips;
+    public List<AudioClip> clipsToPlay;
+    public float clipsVolume;
     public float sfxCooldown = 5f;
     private float sfxCooldownTimer = 0;
     Animator anim;
@@ -22,7 +23,7 @@ public class NPCAnimController : MonoBehaviour
         _audioSource.spatialBlend = 1;
         _audioSource.maxDistance = 6;
         _audioSource.minDistance = 1;
-        _audioSource.volume = 0.5f;
+        _audioSource.volume = clipsVolume;
         anim.Play(0, -1, Random.value);
     }
 
@@ -39,9 +40,9 @@ public class NPCAnimController : MonoBehaviour
         sfxCooldownTimer += Time.deltaTime;
         if (animations == Animations.Talking && !_audioSource.isPlaying)
         {
-            if (mumblingClips.Count > 0 && sfxCooldownTimer>sfxCooldown)
+            if (clipsToPlay.Count > 0 && sfxCooldownTimer>sfxCooldown)
             {
-                _audioSource.clip = mumblingClips[Random.Range(0, mumblingClips.Count)];
+                _audioSource.clip = clipsToPlay[Random.Range(0, clipsToPlay.Count)];
                 _audioSource.Play();
                 sfxCooldownTimer = 0;
             }

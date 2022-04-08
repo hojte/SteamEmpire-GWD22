@@ -14,7 +14,7 @@ public class BackgroundSoundManager : MonoBehaviour
     {
         _audioSource = gameObject.AddComponent<AudioSource>();
         _audioSource.loop = true;
-        _audioSource.volume = 0.1f;
+        _audioSource.volume = 0.05f;
         _audioSource.clip = backMusicNormal;
         _audioSource.Play();
     }

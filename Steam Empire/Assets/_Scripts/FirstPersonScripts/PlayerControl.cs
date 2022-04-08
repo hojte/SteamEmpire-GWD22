@@ -35,6 +35,8 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Sound FX")] 
     public AudioClip[] footstepClips;
+    public float footstepVolume = 0.5f;
+    
     private float baseStepSpeed = 0.5f;
     private float sprintStepMultiplier = 0.7f;
     private float footstepTimer;
@@ -48,7 +50,7 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         playerAudioSource = gameObject.AddComponent<AudioSource>();
-        playerAudioSource.volume = 0.4f;
+        playerAudioSource.volume = 0.5f;
         if (hideCursor)
         {
             Cursor.visible = false;
