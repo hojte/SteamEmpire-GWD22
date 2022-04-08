@@ -20,8 +20,8 @@ public class NPCAnimController : MonoBehaviour
     {
         _audioSource = gameObject.AddComponent<AudioSource>();
         _audioSource.spatialBlend = 1;
-        _audioSource.maxDistance = 8;
-        _audioSource.minDistance = 2;
+        _audioSource.maxDistance = 6;
+        _audioSource.minDistance = 1;
         _audioSource.volume = 0.5f;
         anim.Play(0, -1, Random.value);
     }
