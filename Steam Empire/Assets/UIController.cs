@@ -12,6 +12,16 @@ public class UIController : MonoBehaviour
         cutsceneAudio = GetComponent<AudioSource>();
     }
     public void Update() {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (gameObject.GetComponentInChildren<MenuManager>(true).gameObject.active == false)
+            {
+                gameObject.GetComponentInChildren<MenuManager>(true).gameObject.SetActive(true);
+                Cursor.visible = true;
+                FindObjectOfType<PlayerControl>().disablePlayerControls();
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+        }
     }
 
     public void cutsceneFadeToBlack()
