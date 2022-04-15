@@ -24,4 +24,12 @@ public class CutsceneController : MonoBehaviour
         }
 
     }
+
+    public void endCutscene()
+    {
+        StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(fadeToBlack: false));
+        FindObjectOfType<PlayerControl>().teleportPlayer(cutsceneTeleportTarget);
+        FindObjectOfType<PlayerControl>().enablePlayerControls();
+        gameObject.SetActive(false);
+    }
 }
