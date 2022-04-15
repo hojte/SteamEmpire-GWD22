@@ -25,7 +25,7 @@ public class DoctorEvent : MonoBehaviour
             bool passedOut = (bool) value;
             if (passedOut)
             {
-                StartCoroutine(Passout())
+                StartCoroutine(Passout());
             }
         }));
     }

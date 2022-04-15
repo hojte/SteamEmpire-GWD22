@@ -1,3 +1,6 @@
+INCLUDE globals.ink
+
+~ambushed = true
 
 Not so fast. I don't think I've seen you around before. What are you doing here?
 
