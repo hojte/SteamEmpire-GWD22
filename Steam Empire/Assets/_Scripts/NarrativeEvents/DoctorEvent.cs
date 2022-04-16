@@ -10,6 +10,8 @@ public class DoctorEvent : MonoBehaviour
     
     //TODO: Can re-trigger dialogue after cutscene --> breaks dialogue, disable interactable?
     
+    //TODO: Potential bug: What happens if you initialize a dialogue again after the second one, before anything gets assigned?
+    
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextAsset initialDocTextAsset;
     [SerializeField] private TextAsset finalDocTextAsset;
@@ -51,10 +53,11 @@ public class DoctorEvent : MonoBehaviour
     {
         //_playerController.disablePlayerControls();
         StartCoroutine(uiController.FadeBlackOutSquare());
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         StartCoroutine(uiController.FadeBlackOutSquare(fadeToBlack:false));
         //_playerController.enablePlayerControls();
         //_playerController = null;
-        dialogueManager.EnterDialogueMode(finalDocTextAsset);
+        dialogueManager.AssignStory(finalDocTextAsset);
+        dialogueManager.InitDialogue();
     }
 }

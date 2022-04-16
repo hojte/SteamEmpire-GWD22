@@ -36,14 +36,14 @@ public class AmbushEvent : MonoBehaviour
     {
         //Need to find a better way to do this, also issue with story when object disabled
         StartCoroutine(Knockout());
-        StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare());
+        StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(fadeSpeed:4));
     }
 
     private IEnumerator Knockout()
     {
         //Replace coroutine with something event-driven, maybe reactive? Needs to play as soon as dialogue is over
         //and players might skip
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         for (int i = 0; i < obstacles.Length; i++)
         {
             obstacles[i].SetActive(false);
