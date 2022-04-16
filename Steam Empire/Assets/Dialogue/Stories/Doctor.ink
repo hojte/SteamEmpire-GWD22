@@ -33,7 +33,9 @@ Didn't I tell you to leave? What do you want now?
 === FOREMAN_TASK ===
 TODO: What is the status of medical science here? What is needed to combat the disease?
 {QUESTIONS_1: Why didn't you start with that? <>}
-Just put them down anywhere. Tell the foreman that it's appreciated. But if he really is serious about fighting this disease I'll need some manpower and even more supplies. We need bandages, strong alcohol... -> PASS_OUT
+Just put them down anywhere. Tell the foreman that it's appreciated. But if he really is serious about fighting this disease I'll need some manpower and even more supplies. We need bandages, strong alcohol... 
+-> PASS_OUT
+
 
 === PASS_OUT ===
 Are you feeling okay?

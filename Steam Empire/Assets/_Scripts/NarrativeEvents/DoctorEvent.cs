@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class DoctorEvent : MonoBehaviour
 {
+    
+    //TODO: Can re-trigger dialogue after cutscene --> breaks dialogue, disable interactable?
+    
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextAsset initialDocTextAsset;
     [SerializeField] private TextAsset finalDocTextAsset;
@@ -46,12 +49,12 @@ public class DoctorEvent : MonoBehaviour
 
     private IEnumerator Passout()
     {
-        _playerController.disablePlayerControls();
+        //_playerController.disablePlayerControls();
         StartCoroutine(uiController.FadeBlackOutSquare());
         yield return new WaitForSeconds(5f);
         StartCoroutine(uiController.FadeBlackOutSquare(fadeToBlack:false));
-        _playerController.enablePlayerControls();
-        _playerController = null;
+        //_playerController.enablePlayerControls();
+        //_playerController = null;
         dialogueManager.EnterDialogueMode(finalDocTextAsset);
     }
 }
