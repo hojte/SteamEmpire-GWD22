@@ -8,33 +8,50 @@ using UnityEngine;
 public class DoctorEvent : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
-    [SerializeField] private TextAsset textAsset;
+    [SerializeField] private TextAsset initialDocTextAsset;
+    [SerializeField] private TextAsset finalDocTextAsset;
 
     [SerializeField] private UIController uiController;
 
-    private void Start()
+    private PlayerControl _playerController = null;
+
+    private void OnTriggerEnter(Collider other)
     {
-        dialogueManager.dialogueExit.AddListener(TriggerPassout);
+        var player = other.GetComponent<PlayerControl>();
+        if (player != null)
+        {
+            dialogueManager.AssignStory(initialDocTextAsset);
+            bool infectionReveal = (bool) dialogueManager.GetCurrentStory.variablesState["infection_reveal"];
+            _playerController = player;
+            if (infectionReveal)
+            {
+                print("Infection reveal: " + infectionReveal);
+                
+                dialogueManager.AssignStory(finalDocTextAsset);
+            }
+            else
+            {
+                print("first story assigned");
+                dialogueManager.AssignStory(initialDocTextAsset);
+                dialogueManager.dialogueExit.AddListener(TriggerPassout);
+            }
+        }
     }
 
     private void TriggerPassout()
     {
-        Story story = dialogueManager.GetCurrentStory;
-        story.ObserveVariable("doctor_passout", ((variableName, value) =>
-        {
-            bool passedOut = (bool) value;
-            if (passedOut)
-            {
-                StartCoroutine(Passout());
-            }
-        }));
+        StartCoroutine(Passout());
+        dialogueManager.dialogueExit.RemoveAllListeners();
     }
 
     private IEnumerator Passout()
     {
+        _playerController.disablePlayerControls();
         StartCoroutine(uiController.FadeBlackOutSquare());
         yield return new WaitForSeconds(5f);
         StartCoroutine(uiController.FadeBlackOutSquare(fadeToBlack:false));
-        dialogueManager.EnterDialogueMode(textAsset);
+        _playerController.enablePlayerControls();
+        _playerController = null;
+        dialogueManager.EnterDialogueMode(finalDocTextAsset);
     }
 }

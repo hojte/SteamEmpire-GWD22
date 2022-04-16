@@ -48,6 +48,7 @@ public class AmbushEvent : MonoBehaviour
         {
             obstacles[i].SetActive(false);
         }
+        dialogueManager.dialogueExit.RemoveAllListeners();
 
         StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(fadeToBlack:false));
         FindObjectOfType<PlayerControl>().teleportPlayer(endOfAmbushTeleport);
