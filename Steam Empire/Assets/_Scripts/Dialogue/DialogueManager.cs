@@ -316,7 +316,6 @@ public class DialogueManager : MonoBehaviour
         var dialogueVoice = path.Contains("DialogueVoice/");
         var music = path.Contains("Music/");
         AudioClip audioClip = Resources.Load<AudioClip>(path);
-        var aBitForwardsGO = new GameObject("tmpVoiceObj");
         if (music)
         {
             BackgroundSoundManager.AudioSource.clip = audioClip;
@@ -326,8 +325,9 @@ public class DialogueManager : MonoBehaviour
         } 
         else if (dialogueVoice)
         {
+            var aBitForwardsGO = new GameObject("tmpVoiceObj");
             aBitForwardsGO.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.5f;
-            Destroy(aBitForwardsGO, audioClip.length);
+            Destroy(aBitForwardsGO, audioClip.length); // crash if audioClip wasn't found
             AudioUtility.CreateSFX(audioClip, aBitForwardsGO.transform, 1f, 1f);
             dialogueSoundIsPlaying = true;
             yield return new WaitForSeconds(audioClip.length);

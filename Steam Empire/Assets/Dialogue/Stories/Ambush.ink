@@ -1,7 +1,7 @@
 INCLUDE globals.ink
 
 ~ambushed = true
-#audio:DialogueVoice/test/2HeresAnotherLineTh
+#audio:DialogueVoice/Ambush/1NotSoFast
 Not so fast. I don't think I've seen you around before. What are you doing here?
 
 * [Just passing by.] -> NOTHING
@@ -60,6 +60,7 @@ With his tail between his legs... I thought you'd put up more of fight. Now hand
 {CANT_HELP: So it wasn't enough for the upper city to abandon us. You have to profit of the disease... But the foreman won't help you now. <>}
 He doesn't care about some outsider. And it's not like he's gonna find out that it was us.
 #audio:SFX/Pain/argh4
+#audio:Music/normal_harp
 -> END
 
 
