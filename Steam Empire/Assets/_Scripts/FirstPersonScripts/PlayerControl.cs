@@ -72,9 +72,15 @@ public class PlayerControl : MonoBehaviour
             return;
         }
 
+
         //Jumping and vertical speed
         if (customInput.isJumping && controller.isGrounded)
-            currentVertSpeed = jumpForce;
+        {
+            if (Debug.isDebugBuild)
+            {
+                currentVertSpeed = jumpForce;
+            }
+        }
         else
             currentVertSpeed = Mathf.MoveTowards(currentVertSpeed, -fallSpeed, Time.deltaTime * jumpDamping);
 
