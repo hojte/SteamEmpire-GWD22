@@ -36,11 +36,11 @@ public class PlayerControl : MonoBehaviour
     [Header("Sound FX")] 
     public AudioClip[] footstepClips;
     public float footstepVolume = 1;
-    
+    private AudioSource playerAudioSource;
+
     private float baseStepSpeed = 0.5f;
     private float sprintStepMultiplier = 0.7f;
     private float footstepTimer;
-    private AudioSource playerAudioSource;
     private float GetStepIntervalSpeed => customInput.isSprinting ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
     
     CharacterController controller;

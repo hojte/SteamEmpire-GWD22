@@ -156,6 +156,11 @@ public class DialogueManager : MonoBehaviour
     {
         bool fasterTyping = false;
         // set the text to the full line, but set the visible characters to 0
+        if (line.StartsWith("#") || line.Length == 0)
+        {
+            ContinueStory();
+            yield break;
+        }
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
         // hide items while text is typing
@@ -308,10 +313,29 @@ public class DialogueManager : MonoBehaviour
     }
     private IEnumerator PlayAndWaitForClip(string path)
     {
+        var dialogueVoice = path.Contains("DialogueVoice/");
+        var music = path.Contains("Music/");
         AudioClip audioClip = Resources.Load<AudioClip>(path);
-        AudioUtility.CreateSFX(audioClip, transform, 0, 1f);
-        dialogueSoundIsPlaying = true;
-        yield return new WaitForSeconds(audioClip.length);
+        var aBitForwardsGO = new GameObject("tmpVoiceObj");
+        if (music)
+        {
+            BackgroundSoundManager.AudioSource.clip = audioClip;
+            BackgroundSoundManager.AudioSource.Play();
+            dialogueSoundIsPlaying = false;
+            yield return null;
+        } 
+        else if (dialogueVoice)
+        {
+            aBitForwardsGO.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.5f;
+            Destroy(aBitForwardsGO, audioClip.length);
+            AudioUtility.CreateSFX(audioClip, aBitForwardsGO.transform, 1f, 1f);
+            dialogueSoundIsPlaying = true;
+            yield return new WaitForSeconds(audioClip.length);
+        }
+        else
+        {
+            AudioUtility.CreateSFX(audioClip, transform, 0, 1f);
+        }
         dialogueSoundIsPlaying = false;
     }
 }
