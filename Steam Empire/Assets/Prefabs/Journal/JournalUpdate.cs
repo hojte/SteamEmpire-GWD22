@@ -72,18 +72,30 @@ public class JournalUpdate : MonoBehaviour
 
     public void restoreToDefaults()
     {
-        // TODO
+        string path = "Assets/Prefabs/Journal/journal.txt";
+        File.WriteAllText(path, String.Empty);
+        TextWriter tw = new StreamWriter(path, true);
+        tw.WriteLine("1 clue:true:false");
+
+        int amountOfEntries = 8;
+        
+        for (int i = 2; i <= amountOfEntries; i++)
+            tw.WriteLine(i.ToString() + " clue:false:false");
+        
+        tw.Close();
     }
 
     public void updateJournal(int entry, bool scribble)
     {
 
         WriteString(_journalCanvas, entry, scribble);
-        
+
         if (!scribble)
+        {
             storyProgression = entry;
-        
-        //TODO MATHIAS ADD SHIT HERE
+
+            //TODO MATHIAS ADD SHIT HERE, yes, inside the if
+        }
 
     }
 }
