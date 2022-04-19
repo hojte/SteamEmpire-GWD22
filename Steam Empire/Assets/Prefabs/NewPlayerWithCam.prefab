@@ -1089,7 +1089,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289513467803729939}
-  m_LocalRotation: {x: -0.5381009, y: -0.28361374, z: -0.19858849, w: 0.7684877}
+  m_LocalRotation: {x: -0.15277244, y: -0.78956115, z: -0.55285674, w: 0.21818164}
   m_LocalPosition: {x: 0, y: 1.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1492,6 +1492,7 @@ GameObject:
   - component: {fileID: 289513469372850043}
   - component: {fileID: 1971613690692120529}
   - component: {fileID: 4964665162406513846}
+  - component: {fileID: 8748240872669217709}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1592,6 +1593,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95ca2670d5ffc4589380d39c4a04f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8748240872669217709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289513469372850041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20498047d3bdb774b800f097715fb7cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyProgression: 1
 --- !u!1 &303869844480675718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,7 +3423,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backMusicNormal: {fileID: 8300000, guid: 805450110fd43d1439381291697d6361, type: 3}
-  backMusicDrama: {fileID: 8300000, guid: 80cbf44d1df0992429000ece536d25fd, type: 3}
   musicVolume: 0.06
 --- !u!1 &4670017377808239256
 GameObject:

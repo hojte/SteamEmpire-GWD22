@@ -11,7 +11,7 @@ public class JournalUpdate : MonoBehaviour
 {
     // [SerializeField]
     private Canvas _journalCanvas;
-
+    public int storyProgression = 1;
 
     private void Start()
     {
@@ -70,11 +70,20 @@ public class JournalUpdate : MonoBehaviour
 
     }
 
+    public void restoreToDefaults()
+    {
+        // TODO
+    }
+
     public void updateJournal(int entry, bool scribble)
     {
 
         WriteString(_journalCanvas, entry, scribble);
-        //TODO MATHIAS ADD SHIT HERE OR ABOVE DOES NOT MATTER!
+        
+        if (!scribble)
+            storyProgression = entry;
+        
+        //TODO MATHIAS ADD SHIT HERE
 
     }
 }
