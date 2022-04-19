@@ -2,20 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using _Scripts.Audio;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.UI;
 
 public class JournalUpdate : MonoBehaviour
 {
     // [SerializeField]
     private Canvas _journalCanvas;
+    private GameObject _journalNotification;
     public int storyProgression = 1;
+    public AudioClip notifyClip;
 
     private void Start()
     {
         _journalCanvas = GameObject.Find("DiaryCanvas").GetComponent<Canvas>();
+        _journalNotification = GameObject.Find("JournalNotification");
+        _journalNotification.SetActive(false);
         _journalCanvas.enabled = false;
     }
 
@@ -87,15 +90,26 @@ public class JournalUpdate : MonoBehaviour
 
     public void updateJournal(int entry, bool scribble)
     {
-
         WriteString(_journalCanvas, entry, scribble);
 
         if (!scribble)
         {
             storyProgression = entry;
 
-            //TODO MATHIAS ADD SHIT HERE, yes, inside the if
+            StartCoroutine(NotifyPlayer());
         }
 
+    }
+
+    private IEnumerator NotifyPlayer()
+    {
+        AudioUtility.CreateSFX(notifyClip, transform, 0, 1f);
+        var active = false;
+        for (int i = 0; i < 8; i++)
+        {
+            active = !active;
+            _journalNotification.SetActive(active);
+            yield return new WaitForSeconds(1f);
+        }
     }
 }

@@ -60,7 +60,7 @@ With his tail between his legs... I thought you'd put up more of fight. Now hand
 {CANT_HELP: So it wasn't enough for the upper city to abandon us. You have to profit of the disease... But the foreman won't help you now. <>}
 He doesn't care about some outsider. And it's not like he's gonna find out that it was us.
 #audio:SFX/Pain/argh4
-#audio:SFX/Pain/flashbang
+#audio:SFX/Pain/flashbang:0.5
 #audio:Music/normal_harp
 -> END
 
