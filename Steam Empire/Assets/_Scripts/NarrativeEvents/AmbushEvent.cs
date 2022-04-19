@@ -55,8 +55,8 @@ public class AmbushEvent : MonoBehaviour
 
         //UGLY BUT WORKS
         JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
-        journal.updateJournal(2, false);
-        journal.updateJournal(1, true);
+        journal.updateJournal(3, false);
+        journal.updateJournal(2, true);
     }
     
 }

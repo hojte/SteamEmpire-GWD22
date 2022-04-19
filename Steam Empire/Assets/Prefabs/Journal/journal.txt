@@ -1,7 +1,7 @@
 1 clue:true:true
 2 clue:true:true
-3 clue:true:false
-4 clue:false:false
+3 clue:true:true
+4 clue:true:false
 5 clue:false:false
 6 clue:false:false
 7 clue:false:false
