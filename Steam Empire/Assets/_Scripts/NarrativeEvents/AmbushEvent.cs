@@ -13,6 +13,8 @@ public class AmbushEvent : MonoBehaviour
     [SerializeField] private GameObject [] obstacles;
 
     [SerializeField] private Collider collider;
+
+    public GameObject endOfAmbushTeleport;
     
 
     //TODO: Maybe set position and cam rotation for player character to face main hoodlum properly
@@ -46,8 +48,15 @@ public class AmbushEvent : MonoBehaviour
         {
             obstacles[i].SetActive(false);
         }
+        dialogueManager.dialogueExit.RemoveAllListeners();
 
         StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(fadeToBlack:false));
+        FindObjectOfType<PlayerControl>().teleportPlayer(endOfAmbushTeleport);
+
+        //UGLY BUT WORKS
+        JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+        journal.updateJournal(3, false);
+        journal.updateJournal(2, true);
     }
     
 }
