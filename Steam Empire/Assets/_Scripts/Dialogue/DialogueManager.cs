@@ -313,6 +313,8 @@ public class DialogueManager : MonoBehaviour
     public void OnApplicationQuit() 
     {
         dialogueVariables.SaveVariables();
+        JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+        journal.restoreToDefaults();
     }
     private IEnumerator PlayAndWaitForClip(string path, string volumeOption)
     {
