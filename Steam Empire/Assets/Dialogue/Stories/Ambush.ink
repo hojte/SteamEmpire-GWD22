@@ -1,7 +1,7 @@
 INCLUDE globals.ink
 
 ~ambushed = true
-
+#audio:DialogueVoice/Ambush/1NotSoFast
 Not so fast. I don't think I've seen you around before. What are you doing here?
 
 * [Just passing by.] -> NOTHING
@@ -10,6 +10,7 @@ Not so fast. I don't think I've seen you around before. What are you doing here?
 
 
 === NOTHING ===
+#audio:Music/emotive_harp
 Do you think we're stupid? We've been watching you since you entered the the district with that cart of yours. Why are you here? 
 
 * [I have a batch of supplies for the foreman.] -> FOOD
@@ -57,7 +58,10 @@ With his tail between his legs... I thought you'd put up more of fight. Now hand
 {DEAL: Are you for real? A minute ago you wanted us to pay for his supplies and now you want me to worry about him? Besides... <>}
 {(GET_LOST or APOLOGIZE): So that's who you're working for? Should've guessed. Doesn't matter now. <>}
 {CANT_HELP: So it wasn't enough for the upper city to abandon us. You have to profit of the disease... But the foreman won't help you now. <>}
-He doesn't care about some outsider. And it's not like he's gonna find out that it was us. 
+He doesn't care about some outsider. And it's not like he's gonna find out that it was us.
+#audio:SFX/Pain/argh4
+#audio:SFX/Pain/flashbang
+#audio:Music/normal_harp
 -> END
 
 

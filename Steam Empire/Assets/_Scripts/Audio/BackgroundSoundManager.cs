@@ -1,22 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundSoundManager : MonoBehaviour
+namespace _Scripts.Audio
 {
-    public AudioClip backMusicNormal;
-    public AudioClip backMusicDrama;
-    public float musicVolume = 0.06f;
-
-    private AudioSource _audioSource;
-    
-    // Start is called before the first frame update
-    void Start()
+    public class BackgroundSoundManager : MonoBehaviour
     {
-        _audioSource = gameObject.AddComponent<AudioSource>();
-        _audioSource.loop = true;
-        _audioSource.volume = musicVolume;
-        _audioSource.clip = backMusicNormal;
-        _audioSource.Play();
+        public AudioClip backMusicNormal;
+        public float musicVolume = 0.06f;
+
+        public static AudioSource AudioSource;
+    
+        // Start is called before the first frame update
+        void Start()
+        {
+            AudioSource = gameObject.AddComponent<AudioSource>();
+            AudioSource.loop = true;
+            AudioSource.volume = musicVolume;
+            AudioSource.clip = backMusicNormal;
+            AudioSource.Play();
+        }
     }
 }

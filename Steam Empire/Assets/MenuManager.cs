@@ -24,6 +24,8 @@ public class MenuManager : MonoBehaviour
 
     public void QuitGame()
     {
+        JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+        journal.restoreToDefaults();
         Application.Quit();
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

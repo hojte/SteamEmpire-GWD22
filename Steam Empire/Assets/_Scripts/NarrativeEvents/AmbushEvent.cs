@@ -52,6 +52,11 @@ public class AmbushEvent : MonoBehaviour
 
         StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(fadeToBlack:false));
         FindObjectOfType<PlayerControl>().teleportPlayer(endOfAmbushTeleport);
+
+        //UGLY BUT WORKS
+        JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+        journal.updateJournal(3, false);
+        journal.updateJournal(2, true);
     }
     
 }

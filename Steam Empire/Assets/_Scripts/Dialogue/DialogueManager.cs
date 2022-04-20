@@ -94,6 +94,7 @@ public class DialogueManager : MonoBehaviour
         {
             ContinueStory();
         }
+        if (Input.GetKeyDown(KeyCode.Q)) StartCoroutine(ExitDialogueMode());
     }
 
     public void EnterDialogueMode(TextAsset inkJSON) 
@@ -156,6 +157,11 @@ public class DialogueManager : MonoBehaviour
     {
         bool fasterTyping = false;
         // set the text to the full line, but set the visible characters to 0
+        if (line.StartsWith("#") || line.Trim().Length == 0)
+        {
+            ContinueStory();
+            yield break;
+        }
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
         // hide items while text is typing
@@ -218,12 +224,14 @@ public class DialogueManager : MonoBehaviour
         {
             // parse the tag
             string[] splitTag = tag.Split(':');
-            if (splitTag.Length != 2) 
+            if (splitTag.Length > 3) 
             {
                 Debug.LogError("Tag could not be appropriately parsed: " + tag);
             }
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
+            string tagOption = "";
+            if(splitTag.Length>2) tagOption = splitTag[2].Trim();
             
             // handle the tag
             switch (tagKey) 
@@ -232,7 +240,7 @@ public class DialogueManager : MonoBehaviour
                     displayNameText.text = tagValue;
                     break;
                 case AUDIO_TAG:
-                    StartCoroutine(PlayAndWaitForClip(tagValue));
+                    StartCoroutine(PlayAndWaitForClip(tagValue, tagOption));
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
@@ -306,12 +314,39 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueVariables.SaveVariables();
     }
-    private IEnumerator PlayAndWaitForClip(string path)
+    private IEnumerator PlayAndWaitForClip(string path, string volumeOption)
     {
+        float volume = 1.0f;
+        if(volumeOption.Length > 0) volume = float.Parse(volumeOption);
+        var dialogueVoice = path.Contains("DialogueVoice/");
+        var music = path.Contains("Music/");
         AudioClip audioClip = Resources.Load<AudioClip>(path);
-        AudioUtility.CreateSFX(audioClip, transform, 0, 1f);
-        dialogueSoundIsPlaying = true;
-        yield return new WaitForSeconds(audioClip.length);
+        if (audioClip == null)
+        {
+            Debug.LogError("Resource not found: "+ path);
+            yield break;
+        }
+        if (music)
+        {
+            BackgroundSoundManager.AudioSource.clip = audioClip;
+            // BackgroundSoundManager.AudioSource.volume = volume;
+            BackgroundSoundManager.AudioSource.Play();
+            dialogueSoundIsPlaying = false;
+            yield return null;
+        } 
+        else if (dialogueVoice)
+        {
+            var aBitForwardsGO = new GameObject("tmpVoiceObj");
+            aBitForwardsGO.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.5f;
+            Destroy(aBitForwardsGO, audioClip.length); // crash if audioClip wasn't found
+            AudioUtility.CreateSFX(audioClip, aBitForwardsGO.transform, 1f, volume);
+            dialogueSoundIsPlaying = true;
+            yield return new WaitForSeconds(audioClip.length);
+        }
+        else
+        {
+            AudioUtility.CreateSFX(audioClip, transform, 0, volume);
+        }
         dialogueSoundIsPlaying = false;
     }
 }
