@@ -15,19 +15,32 @@ What?! Who ambushed you? Did you get a look at them?
 * [I don't know. They wore masks.] -> ANGERY
 
 === ANGERY ===
-Useless!
+Useless! I'll have my men make... inquiries. You can leave.
 
-* [I need you help. They stole my pass, too. The guard at the gate won't let me leave.] -> HELP_PLS
-* [I can't get your shipment back. But I can get you a discount on the next one.] -> DISCOUNT
+* [I need your help. They stole my pass. The guard at the gate won't let me leave.] -> HELP_PLS
+* [I can't get you your shipment back. But I can get you a discount on the next one.] -> DISCOUNT
 
 === HELP_PLS ===
+Interesting... That should raise some flags around here.
+
+I can help you get out. But it's going to cost you.
+
+* [Alright. Just help me get out.] -> PREPARATIONS
+* [How about a discount on future shipments?] -> DISCOUNT_ALT
 
 === DISCOUNT ===
-A discount? How awfully nice of you. You lost my shipment, but I have a discount next time. We're running out of food. We needed those supplies. Now I'll have to cut rations again. The situation is tense enough as it is. 
+A discount? How awfully nice of you. You lost my shipment, but I have a discount next time. We're running out of food. We needed those supplies. Now I'll have to cut rations again. The situation was tense enough already.
 
 I'll take your offer. But you better put that shipment together quickly. And I'm not paying you for the one you botched. 
 
 * [I'll do what I can. But I need your help getting out. They took my pass and the guard won't let me leave.] -> ARGUMENT
+
+=== DISCOUNT_ALT ===
+First you lose my supplies, now you offer me a discount? We're running out of food here. I'll have to cut rations again. The situation was tense enough already.
+
+I'll take the discount. But that won't cover the price you have to pay to get out of here. 
+
+* [Fine. Just get me out.] -> PREPARATIONS
 
 
 === ARGUMENT ===
@@ -41,7 +54,7 @@ Maybe. It would certainly take time I don't have. But getting you out of the dis
 * [Alright. Just help me get out.] -> PREPARATIONS
 
 === PREPARATIONS ===
-Good. I'll take the necessary preparations. While your stuck here you can start paying off your debt. Do some work for me. -> DOCTOR_TASK
+Good. I'll take the necessary preparations. While you're stuck here you can start paying off your debt. Do some work for me. -> DOCTOR_TASK
 
 
 === DOCTOR_TASK ===
