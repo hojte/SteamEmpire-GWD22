@@ -1,19 +1,23 @@
 INCLUDE globals.ink
 
-You took your time. You were supposed to arrive hours ago. Where are my supplies?
-Look, I'm sorry. The road was blocked. I had to detour. Then I got jumped. They knocked me out and took everything.
+You took your time. You were supposed to arrive hours ago.
 
+* [I'm sorry. The road was blocked. I left the cart at the gate...] -> EXPLANATION
 
-Help me get out and we can continue our partnership.
-How do I know you won't vanish once you're out? How do I know you'll do you part of the deal. Now that you got a taste of the danger.
-I'll help you get out. But you will need to pay me first. I'm not letting you leave for free. You'll do some work for me, then I help you get out and we can continue our... partnership.
+ === EXPLANATION ===
+You what?! Where are my supplies? Is the cart still at the gate?
 
+*[They were waiting for me. They knocked me out and took everything.] -> AMBUSHERS
 
+=== AMBUSHERS ===
+What?! Who ambushed you? Did you get a look at them?
+
+* [I don't know. They wore masks.] -> ANGERY
 
 === ANGERY ===
-Get out of my sight. You're of no use to me now.
+Useless!
 
-* [I can't get out. They stole my pass, too. The guard at the gate won't let me leave.]
+* [I need you help. They stole my pass, too. The guard at the gate won't let me leave.] -> HELP_PLS
 * [I can't get your shipment back. But I can get you a discount on the next one.] -> DISCOUNT
 
 === HELP_PLS ===
@@ -27,7 +31,7 @@ I'll take your offer. But you better put that shipment together quickly. And I'm
 
 
 === ARGUMENT ===
-Right. Of course. Maybe I should just look for a new partner. Someone more reliable. Someone who ensure the safety of my investments.
+Right. Of course. Maybe I should just look for a new... partner. Someone more reliable. Someone who ensure the safety of my investments.
 
 * [How many people are even willing to make these deliveries? You need me.] -> OFFER
 
@@ -53,4 +57,6 @@ Now get going. I have work to do.
 
 
 === QUESTIONS ===
--> END
+Make it quick.
+
+* [I better get going.]-> END
