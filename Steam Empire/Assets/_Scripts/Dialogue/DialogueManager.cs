@@ -315,6 +315,7 @@ public class DialogueManager : MonoBehaviour
         dialogueVariables.SaveVariables();
         JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
         journal.restoreToDefaults();
+        PlayerPrefs.SetFloat("Gamma", GameObject.Find("PauseMenu").GetComponent<BrightnessSliderBehavior>().brightnessSlider.value);
         Debug.Log("closing game with gamma player pref" + PlayerPrefs.GetFloat("Gamma", -1));
     }
     private IEnumerator PlayAndWaitForClip(string path, string volumeOption)

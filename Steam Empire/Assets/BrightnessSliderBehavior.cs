@@ -13,7 +13,7 @@ public class BrightnessSliderBehavior : MonoBehaviour
     LiftGammaGain liftGammaGain;
     void Start()
     {
-        brightnessSlider.minValue = 0.4f;
+        brightnessSlider.minValue = 0.6f;
         brightnessSlider.maxValue = 1.6f;
         Debug.Log("initiated with gamma" + PlayerPrefs.GetFloat("Gamma", -1));
         if (PlayerPrefs.GetFloat("Gamma", -1) != -1)
@@ -41,7 +41,5 @@ public class BrightnessSliderBehavior : MonoBehaviour
         if (!globalVolume.profile.TryGet(out liftGammaGain)) throw new System.NullReferenceException(nameof(liftGammaGain));
         
         liftGammaGain.gamma.Override(new Vector4(1f, 1f, 1f, value));
-        
-        PlayerPrefs.SetFloat("Gamma", value);
     }
 }
