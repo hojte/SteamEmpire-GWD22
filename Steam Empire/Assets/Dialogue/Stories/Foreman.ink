@@ -1,5 +1,9 @@
 INCLUDE globals.ink
 
+{talked_to_foreman: -> VISITED_BEFORE}
+-> OPENING
+
+=== OPENING ===
 You took your time. You were supposed to arrive hours ago.
 
 * [I'm sorry. The road was blocked. I left the cart at the gate...] -> EXPLANATION
@@ -58,6 +62,7 @@ Good. I'll take the necessary preparations. While you're stuck here you can star
 
 
 === DOCTOR_TASK ===
+~talked_to_foreman = true
 There's a physician. She's set up down by the eastern canal. You can't miss her. She turned the entire area into a makeshift hospital. 
 
 I need you to bring her this satchel of supplies. Don't lose them again or you won't be leaving this district after all. Got it?
@@ -67,13 +72,17 @@ Now get going. I have work to do.
 * [I have questions.] -> QUESTIONS
 * [I'll get going.] -> END
 
+=== VISITED_BEFORE ===
+What do you want?
 
+* [I have questions.] -> QUESTIONS
+* [Nothing.] -> END
 
 === QUESTIONS ===
 Make it quick.
 
 TODO: What happens to ambushers?
 TODO: How is situation?
-TODO: 
+TODO: Doctor who?
 
 * [I better get going.]-> END
