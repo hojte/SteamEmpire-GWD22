@@ -40,6 +40,6 @@ public class BrightnessSliderBehavior : MonoBehaviour
         
         if (!globalVolume.profile.TryGet(out liftGammaGain)) throw new System.NullReferenceException(nameof(liftGammaGain));
         
-        liftGammaGain.gamma.Override(new Vector4(1f, 1f, 1f, value));
+        liftGammaGain.gamma.Override(new Vector4(1f, 1f, 1f, value-1));
     }
 }

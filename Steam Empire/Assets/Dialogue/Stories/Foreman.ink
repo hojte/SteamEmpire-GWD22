@@ -58,7 +58,7 @@ Good. I'll take the necessary preparations. While you're stuck here you can star
 
 
 === DOCTOR_TASK ===
-There's a physician. She's set up down by the NAME OF THE PLACE. You can't miss her. She turned the entire area into a makeshift hospital. 
+There's a physician. She's set up down by the eastern canal. You can't miss her. She turned the entire area into a makeshift hospital. 
 
 I need you to bring her this satchel of supplies. Don't lose them again or you won't be leaving this district after all. Got it?
 
