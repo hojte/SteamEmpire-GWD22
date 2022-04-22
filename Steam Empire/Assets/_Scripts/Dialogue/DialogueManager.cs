@@ -313,6 +313,9 @@ public class DialogueManager : MonoBehaviour
     public void OnApplicationQuit() 
     {
         dialogueVariables.SaveVariables();
+        JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+        journal.restoreToDefaults();
+        Debug.Log("closing game with gamma player pref" + PlayerPrefs.GetFloat("Gamma", -1));
     }
     private IEnumerator PlayAndWaitForClip(string path, string volumeOption)
     {
