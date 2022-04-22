@@ -72,4 +72,8 @@ Now get going. I have work to do.
 === QUESTIONS ===
 Make it quick.
 
+TODO: What happens to ambushers?
+TODO: How is situation?
+TODO: 
+
 * [I better get going.]-> END
