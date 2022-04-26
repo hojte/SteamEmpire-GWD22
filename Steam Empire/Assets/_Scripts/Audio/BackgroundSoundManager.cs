@@ -18,5 +18,10 @@ namespace _Scripts.Audio
             AudioSource.clip = backMusicNormal;
             AudioSource.Play();
         }
+
+        private void Update()
+        {
+            AudioSource.volume = musicVolume * PlayerPrefs.GetFloat("GlobalVolume");
+        }
     }
 }
