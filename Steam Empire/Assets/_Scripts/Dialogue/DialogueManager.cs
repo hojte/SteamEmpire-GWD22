@@ -134,7 +134,7 @@ public class DialogueManager : MonoBehaviour
         _dialogueExit.RemoveAllListeners();
     }
 
-    private void ContinueStory() 
+    private void ContinueStory(bool handleTags = true) 
     {
         if (currentStory.canContinue) 
         {
@@ -145,7 +145,7 @@ public class DialogueManager : MonoBehaviour
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             // handle tags
-            HandleTags(currentStory.currentTags);
+            if(handleTags) HandleTags(currentStory.currentTags);
         }
         else 
         {
@@ -159,7 +159,7 @@ public class DialogueManager : MonoBehaviour
         // set the text to the full line, but set the visible characters to 0
         if (line.StartsWith("#") || line.Trim().Length == 0)
         {
-            ContinueStory();
+            ContinueStory(false);
             yield break;
         }
         dialogueText.text = line;
@@ -340,6 +340,8 @@ public class DialogueManager : MonoBehaviour
         } 
         else if (dialogueVoice)
         {
+            print("DialogueAudio: "+path);
+            while (dialogueSoundIsPlaying) yield return new WaitForSeconds(0.3f);
             var aBitForwardsGO = new GameObject("tmpVoiceObj");
             aBitForwardsGO.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.5f;
             Destroy(aBitForwardsGO, audioClip.length); // crash if audioClip wasn't found
