@@ -320,8 +320,8 @@ public class DialogueManager : MonoBehaviour
     }
     private IEnumerator PlayAndWaitForClip(string path, string volumeOption)
     {
-        float volume = 1.0f;
-        if(volumeOption.Length > 0) volume = float.Parse(volumeOption);
+        float volume = PlayerPrefs.GetFloat("GlobalVolume");
+        if (volumeOption.Length > 0) volume = float.Parse(volumeOption);
         var dialogueVoice = path.Contains("DialogueVoice/");
         var music = path.Contains("Music/");
         AudioClip audioClip = Resources.Load<AudioClip>(path);
@@ -334,6 +334,7 @@ public class DialogueManager : MonoBehaviour
         {
             BackgroundSoundManager.AudioSource.clip = audioClip;
             // BackgroundSoundManager.AudioSource.volume = volume;
+            BackgroundSoundManager.AudioSource.volume = PlayerPrefs.GetFloat("GlobalVolume");
             BackgroundSoundManager.AudioSource.Play();
             dialogueSoundIsPlaying = false;
             yield return null;

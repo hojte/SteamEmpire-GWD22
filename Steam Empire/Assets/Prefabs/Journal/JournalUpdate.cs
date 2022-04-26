@@ -103,7 +103,7 @@ public class JournalUpdate : MonoBehaviour
 
     private IEnumerator NotifyPlayer()
     {
-        AudioUtility.CreateSFX(notifyClip, transform, 0, 1f);
+        AudioUtility.CreateSFX(notifyClip, transform, 0, PlayerPrefs.GetFloat("GlobalVolume"));
         var active = false;
         for (int i = 0; i < 8; i++)
         {

@@ -43,6 +43,7 @@ public class CrowFlying : MonoBehaviour
             targetPos = transform.position + new Vector3(Random.Range(-flyRadius, flyRadius), flyHeight, Random.Range(-flyRadius, flyRadius));
             isFlying = true;
             anim.SetBool("Flying", true);
+            _audioSource.volume = PlayerPrefs.GetFloat("GlobalVolume");
             _audioSource.Play();
         }
     }

@@ -25,6 +25,11 @@ public class CutsceneController : MonoBehaviour
 
     }
 
+    public void setCutsceneVolume()
+    {
+        
+    }
+    
     public void endCutscene()
     {
         StartCoroutine(uiCanvas.GetComponent<UIController>().FadeBlackOutSquare(fadeToBlack: false));
