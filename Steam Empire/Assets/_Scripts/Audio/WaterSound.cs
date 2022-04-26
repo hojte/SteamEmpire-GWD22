@@ -30,7 +30,7 @@ namespace _Scripts.Audio
             //Determine which water sound is the closest
             foreach(AudioSource waterSound in waterSounds)
             {
-                waterSound.volume = waterVolume;
+                waterSound.volume = PlayerPrefs.GetFloat("GlobalVolume");
                 float newDistance = Vector3.Distance(player.transform.position, waterSound.transform.position);
                 if (newDistance < distance) {
                     distance = newDistance;

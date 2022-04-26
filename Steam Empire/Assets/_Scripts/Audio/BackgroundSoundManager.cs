@@ -14,7 +14,7 @@ namespace _Scripts.Audio
         {
             AudioSource = gameObject.AddComponent<AudioSource>();
             AudioSource.loop = true;
-            AudioSource.volume = musicVolume;
+            AudioSource.volume = musicVolume * PlayerPrefs.GetFloat("GlobalVolume");
             AudioSource.clip = backMusicNormal;
             AudioSource.Play();
         }

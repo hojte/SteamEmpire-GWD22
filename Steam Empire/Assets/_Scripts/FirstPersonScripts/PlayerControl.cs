@@ -135,7 +135,12 @@ public class PlayerControl : MonoBehaviour
         if(customInput.moveDirection == Vector3.zero) return;
         footstepTimer -= Time.deltaTime;
         if (!(footstepTimer <= 0)) return;
-        if(footstepClips.Length != 0) playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
+
+        if (footstepClips.Length != 0)
+        {
+            playerAudioSource.volume = PlayerPrefs.GetFloat("GlobalVolume");
+            playerAudioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
+        }
         footstepTimer = GetStepIntervalSpeed;
     }
 

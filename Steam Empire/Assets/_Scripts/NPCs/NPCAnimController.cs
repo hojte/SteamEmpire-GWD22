@@ -41,6 +41,7 @@ public class NPCAnimController : MonoBehaviour
             if (clipsToPlay.Count > 0 && sfxCooldownTimer>sfxCooldown)
             {
                 _audioSource.clip = clipsToPlay[Random.Range(0, clipsToPlay.Count)];
+                _audioSource.volume = PlayerPrefs.GetFloat("GlobalVolume");
                 _audioSource.Play();
                 sfxCooldownTimer = 0;
             }
