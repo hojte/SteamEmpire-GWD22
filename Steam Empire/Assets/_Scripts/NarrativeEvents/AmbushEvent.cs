@@ -54,9 +54,9 @@ public class AmbushEvent : MonoBehaviour
         FindObjectOfType<PlayerControl>().teleportPlayer(endOfAmbushTeleport);
 
         //UGLY BUT WORKS
-        JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+        /*JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
         journal.updateJournal(3, false);
-        journal.updateJournal(2, true);
+        journal.updateJournal(2, true);*/
     }
     
 }
