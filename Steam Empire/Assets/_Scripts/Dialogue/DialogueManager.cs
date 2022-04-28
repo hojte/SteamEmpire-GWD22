@@ -123,6 +123,31 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode() 
     {
+        JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+        var entryToBeWritten = -1;
+        var entryToBeScribbled = -1;
+
+        if (dialogueVariables.variables["ambushed"] == true)
+        {
+            entryToBeScribbled = 2;
+            entryToBeWritten = 3;
+        }
+        
+        if (dialogueVariables.variables["talked_to_foreman"] == true)
+        {
+            entryToBeScribbled = 5;
+            entryToBeWritten = 6;
+        }
+        
+        if (dialogueVariables.variables["doctor_approached"] == true)
+        {
+            entryToBeScribbled = 6;
+            entryToBeWritten = 7;
+        }
+        
+        journal.updateJournal(entryToBeScribbled, true);
+        journal.updateJournal(entryToBeWritten, false);
+        
         _dialogueExit.Invoke();
         yield return new WaitForSeconds(0.2f);
 

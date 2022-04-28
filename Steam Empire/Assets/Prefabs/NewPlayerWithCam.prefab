@@ -3587,8 +3587,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 289513468124605344}
     m_Modifications:
     - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350138016480564890, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6339454389871528016, guid: 35723a428ed9a404ca25fdc126d5e85c, type: 3}
       propertyPath: m_IsActive
@@ -3704,6 +3736,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3819304440260145935}
     m_Modifications:
+    - target: {fileID: 1183158678359478133, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183158678359478133, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183158678359478133, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066922659829499489, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066922659829499489, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.29803923
+      objectReference: {fileID: 0}
     - target: {fileID: 5655976507999132543, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3715,6 +3767,26 @@ PrefabInstance:
     - target: {fileID: 5655976507999132543, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GlobalVolumeSliderBehavior, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814069450536, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814069450536, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7797704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814069450536, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7797704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814069450536, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814069450536, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8347830814069450537, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
       propertyPath: m_Pivot.x
@@ -3803,6 +3875,38 @@ PrefabInstance:
     - target: {fileID: 8347830814069450538, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814225018640, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814225018640, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814225018640, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814996180186, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814996180186, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830814996180186, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830815136569672, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347830815136569672, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2943648
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cfb782c6933aa149883b7167e6e798c, type: 3}
