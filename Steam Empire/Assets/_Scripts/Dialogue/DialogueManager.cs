@@ -126,23 +126,23 @@ public class DialogueManager : MonoBehaviour
         JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
         var entryToBeWritten = -1;
         var entryToBeScribbled = -1;
-
-        if (dialogueVariables.variables["ambushed"] == true)
+        
+        if ((bool)currentStory.variablesState["ambushed"] == true)
         {
             entryToBeScribbled = 2;
             entryToBeWritten = 3;
         }
         
-        if (dialogueVariables.variables["talked_to_foreman"] == true)
-        {
-            entryToBeScribbled = 5;
-            entryToBeWritten = 6;
-        }
-        
-        if (dialogueVariables.variables["doctor_approached"] == true)
+        if ((bool)currentStory.variablesState["talked_to_foreman"] == true)
         {
             entryToBeScribbled = 6;
             entryToBeWritten = 7;
+        }
+        
+        if ((bool)currentStory.variablesState["doctor_approached"] == true)
+        {
+            entryToBeScribbled = 7;
+            entryToBeWritten = 8;
         }
         
         journal.updateJournal(entryToBeScribbled, true);
