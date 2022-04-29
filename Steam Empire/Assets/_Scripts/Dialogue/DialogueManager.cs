@@ -82,7 +82,12 @@ public class DialogueManager : MonoBehaviour
     private void Update() 
     {
         // clear storyline
-        if (Input.GetKeyDown(KeyCode.F4)) dialogueVariables.ClearVariables(loadGlobalsJSON);
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            dialogueVariables.ClearVariables(loadGlobalsJSON);
+            JournalUpdate journal = GameObject.FindGameObjectWithTag("Player").GetComponent<JournalUpdate>();
+            journal.restoreToDefaults();
+        }
         // return right away if dialogue isn't playing
         if (!dialogueIsPlaying) 
         {
