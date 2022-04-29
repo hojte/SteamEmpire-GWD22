@@ -56,6 +56,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
         _dialogueExit = new UnityEvent();
+        dialogueVariables.ClearVariables(loadGlobalsJSON);
     }
 
     public static DialogueManager GetInstance() 
