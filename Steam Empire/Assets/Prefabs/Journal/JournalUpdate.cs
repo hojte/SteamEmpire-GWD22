@@ -86,6 +86,7 @@ public class JournalUpdate : MonoBehaviour
             tw.WriteLine(i.ToString() + " clue:false:false");
         
         tw.Close();
+        StartCoroutine(NotifyPlayer());
     }
 
     public void updateJournal(int entry, bool scribble)
