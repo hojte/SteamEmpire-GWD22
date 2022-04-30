@@ -14,6 +14,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        if(DialogueManager.GetInstance().dialogueIsPlaying) return;
         onInteract.Invoke();
     }
 }
