@@ -96,7 +96,7 @@ public class DialogueManager : MonoBehaviour
         // handle continuing to the next line in the dialogue when key is pressed
         if (canContinueToNextLine 
             && currentStory.currentChoices.Count == 0 
-            && Input.GetKeyDown(KeyCode.Space))
+            && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E)))
         {
             ContinueStory();
         }
