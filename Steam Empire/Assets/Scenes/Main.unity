@@ -198,7 +198,8 @@ PrefabInstance:
       propertyPath: cutsceneTeleportTarget
       value: 
       objectReference: {fileID: 441225921}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2398622465768580212, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
 --- !u!223 &15699524 stripped
 Canvas:
@@ -227,6 +228,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00448f36e17388441848929d96f5fc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &15699527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6522266533224251158, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+  m_PrefabInstance: {fileID: 15699523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15699528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15699527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 7023726599725230892, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
+  m_SubmitAction: {fileID: 9154684136299698876, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
+  m_CancelAction: {fileID: 463146809983382119, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!1001 &170223484
 PrefabInstance:
   m_ObjectHideFlags: 0
