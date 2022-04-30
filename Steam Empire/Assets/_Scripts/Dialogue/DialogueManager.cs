@@ -367,7 +367,6 @@ public class DialogueManager : MonoBehaviour
             // BackgroundSoundManager.AudioSource.volume = volume;
             BackgroundSoundManager.AudioSource.volume = PlayerPrefs.GetFloat("GlobalVolume");
             BackgroundSoundManager.AudioSource.Play();
-            dialogueSoundIsPlaying = false;
             yield return null;
         } 
         else if (dialogueVoice)
@@ -377,9 +376,10 @@ public class DialogueManager : MonoBehaviour
             var aBitForwardsGO = new GameObject("tmpVoiceObj");
             aBitForwardsGO.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.5f;
             Destroy(aBitForwardsGO, audioClip.length); // crash if audioClip wasn't found
-            AudioUtility.CreateSFX(audioClip, aBitForwardsGO.transform, 1f, volume);
+            var source = AudioUtility.CreateSFX(audioClip, aBitForwardsGO.transform, 1f, volume);
             dialogueSoundIsPlaying = true;
-            yield return new WaitForSeconds(audioClip.length);
+            while (source != null && source.isPlaying)
+                yield return new WaitForSeconds(0.3f);
         }
         else
         {
