@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
         cutsceneAudio = GetComponent<AudioSource>();
     }
     public void Update() {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameObject.GetComponentInChildren<MenuManager>(true).gameObject.active == false)
             {
