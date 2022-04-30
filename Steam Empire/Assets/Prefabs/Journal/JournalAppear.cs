@@ -12,6 +12,22 @@ public class JournalAppear : MonoBehaviour
    // [SerializeField]
     private Canvas _journalCanvas;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void OnBeforeSceneLoadRuntimeMethod()
+    {
+        Debug.Log("Setup");
+        StreamWriter outStream = new StreamWriter(Application.dataPath + "/Resources/journal2.txt");
+        outStream.WriteLine("1 clue:true:false");
+        outStream.WriteLine("2 clue:false:false");
+        outStream.WriteLine("3 clue:false:false");
+        outStream.WriteLine("4 clue:false:false");
+        outStream.WriteLine("5 clue:false:false");
+        outStream.WriteLine("6 clue:false:false");
+        outStream.WriteLine("7 clue:false:false");
+        outStream.WriteLine("8 clue:false:false");
+        outStream.Close();
+    }
+
 
     private void Start()
     {
@@ -30,10 +46,10 @@ public class JournalAppear : MonoBehaviour
             
     }
     
-    //[MenuItem("Tools/Read file")]
     static void ReadString(Canvas journalCanvas)
     {
-        string path = "Assets/Prefabs/Journal/journal.txt";
+
+        string path = Application.dataPath+ "/Resources/journal2.txt";
         //Read the text from directly from the test.txt file
         using (StreamReader reader = new StreamReader(path))
         {
@@ -46,6 +62,7 @@ public class JournalAppear : MonoBehaviour
             }
             reader.Close();
         }
+        
 
     }
 }

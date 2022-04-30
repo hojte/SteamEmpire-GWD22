@@ -25,11 +25,11 @@ public class JournalUpdate : MonoBehaviour
 
     public static void WriteString(Canvas journalCanvas, int entry, bool scribble)
     {
-        string path = "Assets/Prefabs/Journal/journal.txt";
+
 
         int line_to_edit = entry; // Warning: 1-based indexing!
-        string sourceFile = "Assets/Prefabs/Journal/journal.txt";
-        string destinationFile = "Assets/Prefabs/Journal/journal.txt";
+        string sourceFile = Application.dataPath + "/Resources/journal2.txt";
+        string destinationFile = Application.dataPath + "/Resources/journal2.txt";
 
         // Read the appropriate line from the file.
         string lineToWrite = null;
@@ -75,7 +75,7 @@ public class JournalUpdate : MonoBehaviour
 
     public void restoreToDefaults()
     {
-        string path = "Assets/Prefabs/Journal/journal.txt";
+        string path = Application.dataPath + "/Resources/journal2.txt";
         File.WriteAllText(path, String.Empty);
         TextWriter tw = new StreamWriter(path, true);
         tw.WriteLine("1 clue:true:false");
