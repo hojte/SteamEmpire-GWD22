@@ -19,24 +19,30 @@ public class PosterAppear : MonoBehaviour
 
     private string[] headlineList = 
         {
-        "Be Aware",
-        "Stay inside", 
-        "Keep distance", 
-        "No leaving"
+        "The foreman cares!",
+        "Imperial Decree", 
+        "See the physician!", 
+        "Curfew!",
+        "STEAM STONE",
+        "Reduced rations"
         };
     private string[] descriptionList = 
         {
-        "All outdoor activity that is not permitted by the foreman  is cancelled between 3rd and 6th belling",
-        "Under the instructions of the foreman everyone is ordered to stay inside the destrict",
-        "Due to high risk of sickness everyone should keep a safe distance and go to the doctor you feel sick",
-        "By the order of the foreman no one is permitted to leave the city district until further notice"
+        "Come by the factory. \n Get your rations!",
+        "All travel from and to this district only with an official pass.",
+        "Notice strange colorations on your skin? \n Protect your fellow citizens! \n Go see the physician down by the canal near the burners!",
+        "Everyone needs to stay inside after sundown. \n Disobedience will be punished!",
+        "THE FOUNDATION OF OUR MIGHTY EMPIRE",
+        "Due to supply shortages all rations will be reduced. No exceptions."
         };
     private string[] signingList =
         {
-        "Foreman",
-        "Foreman",
-        "Doctor",
-        "Foreman"
+        "",
+        "The Emperor's Office",
+        "Your foreman",
+        "Your foreman",
+        "",
+        "The foreman"
         };
 
     private void Awake()
