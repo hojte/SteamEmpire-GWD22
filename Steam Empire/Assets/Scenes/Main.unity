@@ -505,6 +505,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 79.096
       objectReference: {fileID: 0}
+    - target: {fileID: 711095603278796818, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095603599800915, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095603627107458, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095603630920708, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095603951718019, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095603970522685, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604208938336, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604534111250, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604572837798, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604838874538, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604841758738, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604873798780, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604931091139, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095605182621127, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 711095605365808925, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 1286521976659351982, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 1667985103580855651, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 2713033908419392632, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 5661061220849502484, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
     - target: {fileID: 6431096326131507776, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
       propertyPath: m_Name
       value: NarrativeEvents
@@ -613,6 +689,14 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[9]
       value: 
       objectReference: {fileID: 170223491}
+    - target: {fileID: 6733706015553525571, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
+    - target: {fileID: 7402508956965328338, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
 --- !u!65 &378036186 stripped
