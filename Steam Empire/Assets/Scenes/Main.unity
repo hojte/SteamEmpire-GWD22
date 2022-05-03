@@ -533,6 +533,10 @@ PrefabInstance:
       propertyPath: _Image
       value: 
       objectReference: {fileID: 270999584}
+    - target: {fileID: 711095604389621373, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 270999584}
     - target: {fileID: 711095604534111250, guid: fdbdb27512e893c488fa9d25b128f484, type: 3}
       propertyPath: _Image
       value: 
