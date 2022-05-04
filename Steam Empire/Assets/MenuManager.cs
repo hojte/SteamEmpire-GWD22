@@ -18,7 +18,8 @@ public class MenuManager : MonoBehaviour
         {
             gameObject.SetActive(false);
             Cursor.visible = false;
-            FindObjectOfType<PlayerControl>().enablePlayerControls();
+            //FindObjectOfType<PlayerControl>().enablePlayerControls();
+            Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

@@ -18,7 +18,8 @@ public class UIController : MonoBehaviour
             {
                 gameObject.GetComponentInChildren<MenuManager>(true).gameObject.SetActive(true);
                 Cursor.visible = true;
-                FindObjectOfType<PlayerControl>().disablePlayerControls();
+                //FindObjectOfType<PlayerControl>().disablePlayerControls();
+                Time.timeScale = 0;
                 Cursor.lockState = CursorLockMode.Confined;
             }
         }
