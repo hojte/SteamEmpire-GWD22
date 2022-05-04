@@ -15,7 +15,7 @@ TODO: make connection that hoodlums infected PC? Clear enough?
     
 === INFECTION_REVEAL_II ===
 #audio:DialogueVoice/Doctor/doctor_dialogue_Infection_Reveal_II
-From the progression I'd assume you caught the disease within the last 12 hours ago. I did what I could to treat it, but... All I can do is slow the spread.
+From the progression I'd assume you caught the disease within the last 12 hours. I did what I could to treat it, but... All I can do is slow the spread.
 * [...]  -> HUB_2
 TODO: This transition might need to be smoother
 
@@ -78,7 +78,7 @@ Let's see... It's highly contagious, but fairly slow. Infects anything organic. 
     
 === TREATMENT ===
 #audio:DialogueVoice/Doctor/doctor_dialogue_Treatment
-I still don't have a cure, yet. All I can do is slow the spread.
+I still don't have a cure... Yet. All I can do is slow the spread.
 TODO: Based on current infection/disease value change respond to can slow spread vs did all that I can do for now, come back later
 {disease < 50: There isn't anything I can do for you at the moment. Come back later.}
 {disease >= 50: Lie down and I'll see what I can do.}
