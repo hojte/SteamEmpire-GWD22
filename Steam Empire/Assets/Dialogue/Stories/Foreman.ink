@@ -49,7 +49,7 @@ I'll take your offer. But you better put that shipment together quickly. And I'm
 
 === DISCOUNT_ALT ===
 #audio:DialogueVoice/Forman/forman_dialogue_Discount_Alt1
-First you lose my supplies, now you offer me a discount? We're running out of food here. I'll have to cut rations again. The situation was tense enough already.
+First, you lose my supplies, now you offer me a discount? We're running out of food here. I'll have to cut rations again. The situation was tense enough already.
 
 #audio:DialogueVoice/Forman/forman_dialogue_Discount_Alt2
 I'll take the discount. But that won't cover the price you have to pay to get out of here. 
@@ -59,7 +59,7 @@ I'll take the discount. But that won't cover the price you have to pay to get ou
 
 === ARGUMENT ===
 #audio:DialogueVoice/Forman/forman_dialogue_Argument
-Right. Of course. Maybe I should just look for a new... partner. Someone more reliable. Someone who ensure the safety of my investments.
+Right. Of course. Maybe I should just look for a new... partner. Someone more reliable. Someone who ensures the safety of my investments.
 
 * [How many people are even willing to make these deliveries? You need me.] -> OFFER
 

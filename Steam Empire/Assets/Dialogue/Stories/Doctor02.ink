@@ -15,7 +15,7 @@ TODO: make connection that hoodlums infected PC? Clear enough?
     
 === INFECTION_REVEAL_II ===
 #audio:DialogueVoice/Doctor/doctor_dialogue_Infection_Reveal_II
-From the progression I'd assume you caught the disease within the last 12 hours. I did what I could to treat it, but... All I can do is slow the spread.
+From the progression, I'd assume you caught the disease within the last 12 hours. I did what I could to treat it, but... All I can do is slow the spread.
 * [...]  -> HUB_2
 TODO: This transition might need to be smoother
 
@@ -26,7 +26,6 @@ Can I do anything else for you?
 
 * [I have some questions.] -> QUESTIONS_2
 * [Could you look at my infection again?] -> TREATMENT
-TODO: maybe rephrase this
 * [Do you need help finding a cure?]-> OFFER_HELP 
 * [I'll be going.] -> END
 
@@ -63,23 +62,20 @@ Why wouldn't he? I'm the only doctor in the entire district. And the foreman doe
 
 
 === FOREMAN_INFO ===
-TODO: Add something about 
 #audio:DialogueVoice/Doctor/doctor_dialogue_Forman_Info
-We've been on our own, since the emperor locked down the district. The magistrate fled and the city watch isn't allowed to enter anymore. So now the foreman is in charge of security around here. He also rations the few supply shipments we get. He's done a fairly good job at keeping the district from rioting. That's all I can tell you.
+We've been on our own since the emperor locked down the district. The magistrate fled and the city watch isn't allowed to enter anymore. So now the foreman is in charge of security around here. He also rations the few supply shipments we get. He's done a fairly good job at keeping the district from rioting. That's all I can tell you.
 -> QUESTIONS_2
 
 
 === DISEASE_INFO ===
-TODO: Should be sort of dodgy on this part, knows exactly where the disease came from, but does not want to talk about it, maybe sense of pride for figuring out some of it, but also see previous point. Only one who can figure this out, because has all the information
 #audio:DialogueVoice/Doctor/doctor_dialogue_First_Disease_Info
-Let's see... It's highly contagious, but fairly slow. Infects anything organic.  Wood, plants, animals... Humans. Haven't seen it on stone. That's probably why it hasn't spread to the upper districts. The people here were barely allowed to leave before, let alone now. And... Sorry to say, but I haven't found a cure. It's a death sentence. At least for now.
+Let's see... It's highly contagious but fairly slow. Infects anything organic.  Wood, plants, animals... Humans. Haven't seen it on stone. That's probably why it hasn't spread to the upper districts. The people here were barely allowed to leave before, let alone now. And... Sorry to say, but I haven't found a cure. It's a death sentence. At least for now.
     -> QUESTIONS_2
 
     
 === TREATMENT ===
 #audio:DialogueVoice/Doctor/doctor_dialogue_Treatment
 I still don't have a cure... Yet. All I can do is slow the spread.
-TODO: Based on current infection/disease value change respond to can slow spread vs did all that I can do for now, come back later
 {disease < 50: There isn't anything I can do for you at the moment. Come back later.}
 {disease >= 50: Lie down and I'll see what I can do.}
     -> END
@@ -87,6 +83,6 @@ TODO: Based on current infection/disease value change respond to can slow spread
 
 === OFFER_HELP === 
 #audio:DialogueVoice/Doctor/doctor_dialogue_Offer_Help
-Not at the moment. I have patients to treat and you are already infected. But come back later, I could use some assisstance in my research. 
+Not at the moment. I have patients to treat and you are already infected. But come back later, I could use some assistance in my research. 
  -> HUB_2
 

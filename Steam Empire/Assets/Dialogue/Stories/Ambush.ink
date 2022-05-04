@@ -12,7 +12,7 @@ Not so fast. I don't think I've seen you around before. What are you doing here?
 === NOTHING ===
 #audio:Music/emotive_harp
 #audio:DialogueVoice/Ambush/hoodlum_dialogue_Nothing
-Do you think we're stupid? We've been watching you since you entered the the district with that cart of yours. Why are you here? 
+Do you think we're stupid? We've been watching you since you entered the district with that cart of yours. Why are you here? 
 
 * [I have a batch of supplies for the foreman.] -> FOOD
 * [Get out of my way.] -> GET_LOST
@@ -48,7 +48,7 @@ There's three of us, you're alone and not exactly the fighting type...
 
 === DEAL ===
 #audio:DialogueVoice/Ambush/hoodlum_dialogue_Deal
-We can deal, alright. Here's a deal: You leave those supplies to us and in return you get to go home.
+We can deal, alright. Here's a deal: You leave those supplies to us and in return, you get to go home.
 
 * [Wait!  What do you think the foreman is going to do to you when he finds out that you're stealing his supplies?] -> ARGUE
 
@@ -63,7 +63,7 @@ This isn't a negotiation. I'm telling you to do something and if you don't then 
 
 === APOLOGIZE ===
 #audio:DialogueVoice/Ambush/hoodlum_dialogue_apologize
-With his tail between his legs... I thought you'd put up more of fight. Now hand over your shipment and maybe we'll let you live.
+With his tail between his legs... I thought you'd put up more of a fight. Now hand over your shipment and maybe we'll let you live.
 * [Wait! What do you think happens when the foreman finds out that you're stealing from him?] -> ARGUE
 
 
@@ -78,7 +78,7 @@ With his tail between his legs... I thought you'd put up more of fight. Now hand
     }
 {CANT_HELP: 
 #audio:DialogueVoice/Ambush/hoodlum_dialogue_Argue_Cant_Help
-    So it wasn't enough for the upper city to abandon us. You have to profit of the disease... But the foreman won't help you now. <>
+    So it wasn't enough for the upper city to abandon us. You have to profit off the disease... But the foreman won't help you now. <>
         }
 #audio:DialogueVoice/Ambush/hoodlum_dialogue_Argue
 He doesn't care about some outsider. And it's not like he's gonna find out that it was us.
