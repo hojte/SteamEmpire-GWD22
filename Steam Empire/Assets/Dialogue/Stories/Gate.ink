@@ -26,6 +26,5 @@ District pass?
 * [I can't find it. It must have been stolen.] -> GUARD_III
 
 === GUARD_III ===
-No pass. No passage.
-* [But you let me through earlier. You must remember me!]
-    I've been here for a few hours and I haven't seen you before. Now get lost. -> END
+~talked_to_guard = true
+No pass. No passage. Now get lost. -> END

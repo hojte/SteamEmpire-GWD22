@@ -24,26 +24,26 @@ TODO: This transition might need to be smoother
 #audio:DialogueVoice/Doctor/doctor_dialogue_Hub_2
 Can I do anything else for you?
 
-* [I have some questions.] -> QUESTIONS_2
-* [Could you look at my infection again?] -> TREATMENT
++ [I have some questions.] -> QUESTIONS_2
++ [Could you look at my infection again?] -> TREATMENT
 * [Do you need help finding a cure?]-> OFFER_HELP 
-* [I'll be going.] -> END
++ [I'll be going.] -> END
 
 
 === QUESTIONS_2 ===
 What do you want to know?
 
-* [Not many physicians around here...] -> DOCTOR_INFO
++ [Are you the only physician around here?] -> DOCTOR_INFO
 
 TODO: Unlocks if talked about doctor and saw the workshop * [WORKSHOP] -> WORKSHOP_INFO
 
-* [What happened here since the outbreak?] -> FOREMAN_INFO
++ [What happened here since the outbreak?] -> FOREMAN_INFO
 
-* [What do you know about the disease?] -> DISEASE_INFO
++ [What do you know about the disease?] -> DISEASE_INFO
 
-* [Why does the foreman supply you?] -> SUPPLIES_INFO
++ [Why does the foreman supply you?] -> SUPPLIES_INFO
 
-* [That is all for now.] -> HUB_2
++ [That is all for now.] -> HUB_2
 
 
 === DOCTOR_INFO ===
@@ -78,7 +78,7 @@ Let's see... It's highly contagious but fairly slow. Infects anything organic.  
 I still don't have a cure... Yet. All I can do is slow the spread.
 {disease < 50: There isn't anything I can do for you at the moment. Come back later.}
 {disease >= 50: Lie down and I'll see what I can do.}
-    -> END
+    -> HUB_2
 
 
 === OFFER_HELP === 

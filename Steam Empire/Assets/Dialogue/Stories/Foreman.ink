@@ -25,7 +25,7 @@ What?! Who ambushed you? Did you get a look at them?
 #audio:DialogueVoice/Forman/forman_dialogue_Angery
 Useless! I'll have my men make... inquiries. You can leave.
 
-* [I need your help. They stole my pass. The guard at the gate won't let me leave.] -> HELP_PLS
+* [I need your help. They stole my pass. {talked_to_guard: The guard at the gate won't let me leave. | I don't think the guard will let me leave.}] -> HELP_PLS
 * [I can't get you your shipment back. But I can get you a discount on the next one.] -> DISCOUNT
 
 === HELP_PLS ===
@@ -45,7 +45,7 @@ A discount? How awfully nice of you. You lost my shipment, but I have a discount
 #audio:DialogueVoice/Forman/forman_dialogue_Discount2
 I'll take your offer. But you better put that shipment together quickly. And I'm not paying you for the one you botched. 
 
-* [I'll do what I can. But I need your help getting out. They took my pass and the guard won't let me leave.] -> ARGUMENT
+* [I'll do what I can. But I need your help getting out. {talked_to_guard: They took my pass and the guard won't let me leave. | I think they stole my pass, too. Can't get out without it.}] -> ARGUMENT
 
 === DISCOUNT_ALT ===
 #audio:DialogueVoice/Forman/forman_dialogue_Discount_Alt1
@@ -85,14 +85,14 @@ I need you to bring her this satchel of supplies. Don't lose them again or you w
 #audio:DialogueVoice/Forman/forman_dialogue_Doctor_Task3
 Now get going. I have work to do.
 
-* [I have questions.] -> QUESTIONS
-* [I'll get going.] -> END
++ [I have questions.] -> QUESTIONS
++ [I'll get going.] -> END
 
 === VISITED_BEFORE ===
 What do you want?
 
-* [I have questions.] -> QUESTIONS
-* [Nothing.] -> END
++ [I have questions.] -> QUESTIONS
++ [Nothing.] -> END
 
 === QUESTIONS ===
 #audio:DialogueVoice/Forman/forman_dialogue_Questions
@@ -102,4 +102,4 @@ TODO: What happens to ambushers?
 TODO: How is situation?
 TODO: Doctor who?
 
-* [I better get going.]-> END
++ [I better get going.]-> END
