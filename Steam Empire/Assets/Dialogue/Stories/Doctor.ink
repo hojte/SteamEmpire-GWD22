@@ -4,7 +4,7 @@ TODO: Add foreman dialogue condition
 TODO: rephrase of "district/districts"
 TODO: Add that PC is not from around here somewhere
 TODO: Use global variable to track where to go
-
+#speaker:Physician
 {doctor_approached: -> SECOND_APPROACH}
 -> INTRODUCTION
 

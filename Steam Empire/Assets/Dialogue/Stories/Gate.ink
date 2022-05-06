@@ -1,5 +1,7 @@
 INCLUDE globals.ink
 
+#speaker:Guard
+
 {ambushed && GUARD: I told you to get lost. -> END}
 
 -> GATE
@@ -10,16 +12,16 @@ TODO: Rename to something more obvious
 + {ambushed} [\[Knock.\]] -> GUARD
 + [\[Leave.\]] -> END
 
+
 === KNOCKING ===
 (...)
 -> GATE
+
 
 === GUARD ===
 District pass?
 * [Of course. One moment.] -> GUARD_II
     
-
-
 
 === GUARD_II ===
 (...)

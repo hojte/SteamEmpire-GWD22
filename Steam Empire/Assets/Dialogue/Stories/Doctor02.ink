@@ -1,5 +1,5 @@
 INCLUDE globals.ink
-
+#speaker:Physician
 {infection_reveal: You're back again? <> -> HUB_2}
 -> INFECTION_REVEAL_I
 

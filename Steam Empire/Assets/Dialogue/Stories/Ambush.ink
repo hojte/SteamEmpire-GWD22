@@ -1,5 +1,6 @@
 INCLUDE globals.ink
 
+#speaker:Hoodlum
 ~ambushed = true
 #audio:DialogueVoice/Ambush/hoodlum_dialogue_Not_So_Fast
 Not so fast. I don't think I've seen you around before. What are you doing here?
