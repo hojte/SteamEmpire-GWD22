@@ -79,7 +79,7 @@ Good. I'll take the necessary preparations. While you're stuck here you can star
 === DOCTOR_TASK ===
 ~talked_to_foreman = true
 #audio:DialogueVoice/Forman/forman_dialogue_Doctor_Task1
-There's a physician. She's set up down by the canal. Near that column of smoke where they burn the bodies. You can't miss her. She turned the entire area into a makeshift hospital. 
+There's a physician. She's set up down by the eastern tunnel. Just follow the pruple smoke in the sky. She should be by the house in front of it. You can't miss her. She turned the entire area into a makeshift hospital.
 
 #audio:DialogueVoice/Forman/forman_dialogue_Doctor_Task2
 I need you to bring her this satchel of supplies. Don't lose them again or you won't be leaving this district after all. Got it?
