@@ -1,6 +1,6 @@
 INCLUDE globals.ink
 
-#speaker:foreman
+#speaker:Foreman
 
 {talked_to_foreman: -> VISITED_BEFORE}
 -> OPENING
