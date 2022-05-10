@@ -19,7 +19,7 @@ You what?! Where are my supplies? Is the cart still at the gate?
 
 === AMBUSHERS ===
 #audio:DialogueVoice/Forman/forman_dialogue_Ambushers
-What?! Who ambushed you? Did you get a look at them?
+What?! Who ambushed you? Did you get a good look at them?
 
 * [I don't know. They wore masks.] -> ANGERY
 
@@ -34,6 +34,9 @@ Useless! I'll have my men make... inquiries. You can leave.
 #audio:DialogueVoice/Forman/forman_dialogue_Help_Pls1
 Interesting... That should raise some flags around here.
 
+* [\[Continue\]] -> HELP_PLS_II
+
+=== HELP_PLS_II ===
 #audio:DialogueVoice/Forman/forman_dialogue_Help_Pls2
 I can help you get out. But it's going to cost you.
 
@@ -44,6 +47,9 @@ I can help you get out. But it's going to cost you.
 #audio:DialogueVoice/Forman/forman_dialogue_Discount1
 A discount? How awfully nice of you. You lost my shipment, but I have a discount next time. We're running out of food. We needed those supplies. Now I'll have to cut rations again. The situation was tense enough already.
 
+* [\[Continue\]] -> DISCOUNT_II
+
+=== DISCOUNT_II ===
 #audio:DialogueVoice/Forman/forman_dialogue_Discount2
 I'll take your offer. But you better put that shipment together quickly. And I'm not paying you for the one you botched. 
 
@@ -53,6 +59,9 @@ I'll take your offer. But you better put that shipment together quickly. And I'm
 #audio:DialogueVoice/Forman/forman_dialogue_Discount_Alt1
 First, you lose my supplies, now you offer me a discount? We're running out of food here. I'll have to cut rations again. The situation was tense enough already.
 
+* [\[Continue\]] -> DISCOUNT_ALT_II
+
+=== DISCOUNT_ALT_II
 #audio:DialogueVoice/Forman/forman_dialogue_Discount_Alt2
 I'll take the discount. But that won't cover the price you have to pay to get out of here. 
 
@@ -73,22 +82,30 @@ Maybe. It would certainly take time I don't have. But getting you out of the dis
 
 === PREPARATIONS ===
 #audio:DialogueVoice/Forman/forman_dialogue_Preparations
-Good. I'll take the necessary preparations. While you're stuck here you can start paying off your debt. Do some work for me. -> DOCTOR_TASK
+Good. I'll make the necessary preparations. While you're stuck here you can start paying off your debt. Do some work for me. 
+
+* [\[Continue\]] -> DOCTOR_TASK
 
 
 === DOCTOR_TASK ===
 ~talked_to_foreman = true
 #audio:DialogueVoice/Forman/forman_dialogue_Doctor_Task1
-There's a physician. She's set up down by the eastern tunnel. Just follow the pruple smoke in the sky. She should be by the house in front of it. You can't miss her. She turned the entire area into a makeshift hospital.
+There's a physician. She's set up down by the eastern tunnel. Just follow the purple smoke in the sky. She should be by the house in front of it. You can't miss her. She turned the entire area into a makeshift hospital.
 
+* [\[Continue\]] -> DOCTOR_TASK_II
+
+=== DOCTOR_TASK_II ===
 #audio:DialogueVoice/Forman/forman_dialogue_Doctor_Task2
 I need you to bring her this satchel of supplies. Don't lose them again or you won't be leaving this district after all. Got it?
 
+* [\[Continue\]] -> DOCTOR_TASK_III
+
+=== DOCTOR_TASK_III
 #audio:DialogueVoice/Forman/forman_dialogue_Doctor_Task3
 Now get going. I have work to do.
 
 + [I have questions.] -> QUESTIONS
-+ [I'll get going.] -> END
++ [I'm leaving.] -> END
 
 === VISITED_BEFORE ===
 What do you want?
@@ -99,9 +116,5 @@ What do you want?
 === QUESTIONS ===
 #audio:DialogueVoice/Forman/forman_dialogue_Questions
 Make it quick.
-
-TODO: What happens to ambushers?
-TODO: How is situation?
-TODO: Doctor who?
 
 + [I better get going.]-> END

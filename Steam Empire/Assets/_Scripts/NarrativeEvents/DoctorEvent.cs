@@ -18,8 +18,6 @@ public class DoctorEvent : MonoBehaviour
 
     [SerializeField] private UIController uiController;
 
-    private PlayerControl _playerController = null;
-
     private void OnTriggerEnter(Collider other)
     {
         var player = other.GetComponent<PlayerControl>();
@@ -27,7 +25,6 @@ public class DoctorEvent : MonoBehaviour
         {
             dialogueManager.AssignStory(initialDocTextAsset);
             bool infectionReveal = (bool) dialogueManager.GetCurrentStory.variablesState["infection_reveal"];
-            _playerController = player;
             if (infectionReveal)
             {
                 print("Infection reveal: " + infectionReveal);
@@ -51,12 +48,9 @@ public class DoctorEvent : MonoBehaviour
 
     private IEnumerator Passout()
     {
-        //_playerController.disablePlayerControls();
         StartCoroutine(uiController.FadeBlackOutSquare());
         yield return new WaitForSeconds(3f);
         StartCoroutine(uiController.FadeBlackOutSquare(fadeToBlack:false));
-        //_playerController.enablePlayerControls();
-        //_playerController = null;
         dialogueManager.AssignStory(finalDocTextAsset);
         dialogueManager.InitDialogue();
     }

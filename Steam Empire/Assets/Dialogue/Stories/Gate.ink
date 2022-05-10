@@ -2,11 +2,10 @@ INCLUDE globals.ink
 
 #speaker:Guard
 
-{ambushed && GUARD: I told you to get lost. -> END}
-
 -> GATE
 
 === GATE ===
+{ambushed && talked_to_guard: I told you to get lost. -> END}
 + {not ambushed} [\[Knock {KNOCKING: again.| at the gate.}\]] -> KNOCKING 
 TODO: Rename to something more obvious
 + {ambushed} [\[Knock.\]] -> GUARD

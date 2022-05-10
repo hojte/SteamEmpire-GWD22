@@ -30,9 +30,9 @@ Do you think we're stupid? We've been watching you since you entered the distric
     #audio:DialogueVoice/Ambush/hoodlum_dialogue_Not_Nothing_or_Get_Lost
     Really? Supplies? Lucky us. I bet there's food in there. You see, we've been starving ever since the foreman decreased rations. So, since you're working for him... Why don't you help us out? Leave the cart. I promise we'll share. 
     }
-    * [Maybe we can make a deal?] -> DEAL
-    * [I can't. I have to deliver everything on that cart.] -> CANT_HELP
-    * [Get out of my way.] -> GET_LOST
+* [Maybe we can make a deal?] -> DEAL
+* [I can't. I have to deliver everything on that cart.] -> CANT_HELP
+* [Get out of my way.] -> GET_LOST
 
 
 === GET_LOST ===
@@ -83,10 +83,11 @@ With his tail between his legs... I thought you'd put up more of a fight. Now ha
         }
 #audio:DialogueVoice/Ambush/hoodlum_dialogue_Argue
 He doesn't care about some outsider. And it's not like he's gonna find out that it was us.
-#audio:SFX/Pain/argh4
-#audio:SFX/Pain/flashbang:0.5
-#audio:Music/normal_harp
--> END
+* [\[Continue\]]
+    #audio:SFX/Pain/argh4
+    #audio:SFX/Pain/flashbang:0.5
+    #audio:Music/normal_harp
+    -> END
 
 
 
