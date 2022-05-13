@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -57,8 +58,14 @@ public class JournalAppear : MonoBehaviour
             while ((line = reader.ReadLine()) != null)
             {
                 String[] lines = line.Split(':');
-                journalCanvas.transform.Find(lines[0]).GetComponent<Text>().enabled = bool.Parse(lines[1]);
-                journalCanvas.transform.Find(lines[0]+" line").GetComponent<Text>().enabled = bool.Parse(lines[2]);
+                var tmpAsset = journalCanvas.transform.Find(lines[0]).GetComponent<TMP_Text>();
+                print(tmpAsset);
+                tmpAsset.enabled = bool.Parse(lines[1]);
+                var strikethrough = bool.Parse(lines[2]);
+                if (strikethrough)
+                    tmpAsset.fontStyle = FontStyles.Strikethrough;
+                else
+                    tmpAsset.fontStyle = FontStyles.Normal;
             }
             reader.Close();
         }
