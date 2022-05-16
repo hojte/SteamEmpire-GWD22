@@ -652,8 +652,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Got knocked out. Who knows how long. Foreman probably waiting. Might be
-    angry. Could just leave.
+  m_text: Have to find the physician... she should be by the canal near a column
+    of smoke
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82b6d162ee5eae2429ae3456d86a4809, type: 2}
   m_sharedMaterial: {fileID: -5287077137610505180, guid: 82b6d162ee5eae2429ae3456d86a4809, type: 2}
@@ -787,8 +787,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Got knocked out. Who knows how long. Foreman probably waiting. Might be
-    angry. Could just leave.
+  m_text: I am infected. Need to find a cure fast. (Narrative content ends here,
+    feel free to keep exploring)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82b6d162ee5eae2429ae3456d86a4809, type: 2}
   m_sharedMaterial: {fileID: -5287077137610505180, guid: 82b6d162ee5eae2429ae3456d86a4809, type: 2}
