@@ -215,7 +215,15 @@ PrefabInstance:
       value: NewPlayerWithCam
       objectReference: {fileID: 0}
     - target: {fileID: 329464392871350878, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329464392871350878, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329464392871350878, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1164716975567354529, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
@@ -231,6 +239,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2734794458062923922, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734794458062923922, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -238,6 +250,10 @@ PrefabInstance:
       propertyPath: cutsceneTeleportTarget
       value: 
       objectReference: {fileID: 441225921}
+    - target: {fileID: 4442628748945086900, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: m_Value
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5374177574084701784, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 266.15622
