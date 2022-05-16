@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
+    [SerializeField] private InputActionAsset MouseInputAction; 
     public GameObject blackOutSquare;
     public AudioSource cutsceneAudio;
 
@@ -16,6 +18,8 @@ public class UIController : MonoBehaviour
         {
             if (gameObject.GetComponentInChildren<MenuManager>(true).gameObject.active == false)
             {
+                MouseInputAction.actionMaps[1].Enable();
+
                 gameObject.GetComponentInChildren<MenuManager>(true).gameObject.SetActive(true);
                 Cursor.visible = true;
                 //FindObjectOfType<PlayerControl>().disablePlayerControls();

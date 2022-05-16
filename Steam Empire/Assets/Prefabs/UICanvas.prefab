@@ -697,6 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00448f36e17388441848929d96f5fc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MouseInputAction: {fileID: -944628639613478452, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
   blackOutSquare: {fileID: 6339454390821540671}
   cutsceneAudio: {fileID: 6339454389896894824}
 --- !u!1 &6339454390821540671

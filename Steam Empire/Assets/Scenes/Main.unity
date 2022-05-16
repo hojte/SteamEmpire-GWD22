@@ -150,6 +150,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1968842213, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: MouseInputAction
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
+    - target: {fileID: 1968842213, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: MouseInputAction.m_Id
+      value: 36848c67-4bd4-4ce4-8fa0-5b8b000a6897
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968842213, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
+      propertyPath: MouseInputAction.m_Name
+      value: Mouse Input
+      objectReference: {fileID: 0}
     - target: {fileID: 289513467803729934, guid: 9f30bf4668f278148b9427ba22de8a5e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

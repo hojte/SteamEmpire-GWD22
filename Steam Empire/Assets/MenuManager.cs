@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private InputActionAsset MouseInputAction; 
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
+            MouseInputAction.actionMaps[1].Disable();
+
             gameObject.SetActive(false);
             Cursor.visible = false;
             //FindObjectOfType<PlayerControl>().enablePlayerControls();
